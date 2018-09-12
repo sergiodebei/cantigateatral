@@ -3,7 +3,7 @@
 	{% if block.acf_fc_layout == 'heading' %}
 		{{ block.text }}
 
-		{# {% elseif block.acf_fc_layout == 'text' %}
+		{% elseif block.acf_fc_layout == 'text' %}
 			{{ block.text|wpautop }}
 
           	{% if block.add_buttons and block.buttons|length > 0 %}
@@ -18,7 +18,7 @@
 
         {% elseif block.acf_fc_layout == 'text_text' %}
         	{{ block.text_left }}
-        	{{ block.text_right }} #}
+        	{{ block.text_right }}
 
         {% elseif block.acf_fc_layout == 'text_image' %}
         	
@@ -56,7 +56,7 @@
 				<img src="{{ TimberImage(block.image.url).src }}">  #}
             {% endif %}
 
-        {# {% elseif block.acf_fc_layout == 'images' %}
+        {% elseif block.acf_fc_layout == 'images' %}
             {% if block.images|length == 1 %}
               	{% if block.images[0] %}<img src="{{ TimberImage(block.images[0].image.url).src }}">{% endif %}
                 {% else %}
@@ -69,7 +69,7 @@
 			<img src="{{ TimberImage(block.image.url).src }}">
 
         {% elseif block.acf_fc_layout == 'video' %}
-            {{ block.video }} #}
+            {{ block.video }}
 
 	{% endif %}
 
