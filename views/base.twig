@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="no-js legacy" {{ site.language_attributes }}><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" {{ site.language_attributes }}><!--<![endif]-->
+<head>
+    <meta charset="{{ site.charset }}" />
+    <title>{% if wp_title %}{{ wp_title }}{% else %}{{ site.name }}{% endif %}</title>
+
+    <meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    {% include 'partials/meta-favicons.twig' %}
+
+    {% include 'partials/gtm.twig' with {
+            'code': options.api_tracking.gtm
+        } 
+    %}
+
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+    <link rel="stylesheet" href="{{theme.link}}/assets/dev/css/cantigateatral-main.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="application/javascript" src="{{theme.link}}/assets/dev/js/cantigateatral-main.js"></script>
+
+    {{ wp_head }}
+</head>
+
+<body class="{{ body_class }}" itemscope itemtype="//schema.org/WebPage">
+
+{#     {% if site.is_home %}
+        {% include 'partials/splash.twig' %}
+    {% endif %} #}
+
+    {% include 'partials/header.twig' %}
+
+    {% include 'partials/nav.twig' %}
+
+    {% block content %}{% endblock %}
+
+{#     {% if function('is_page','about') %}
+    {% endif %} #}
+
+    {% include 'partials/footer.twig' %}
+
+    {{ wp_footer }}
+    {% block scripts %}{% endblock %}
+</body>
+</html>

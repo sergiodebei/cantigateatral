@@ -1,0 +1,30 @@
+{# <div class="footer">
+{% if not fn('is_front_page') %}
+{% set cssClass = 'navigation--footer' %}
+{% set title    = title|default(0) %}
+{% set items    = menu_footer.items|default(0) %}
+{% if items %}
+    <div class="navigation{% if cssClass %} {{ cssClass }}{% endif %}">
+        {% if title %}<h5 class="nav__title">{{ title }}</h5>{% endif %}
+        <ul class="navigation__list">
+            {% for item in items %}
+                <li class="navigation__item {{ item.classes|join(' ') }}{% if item.current %} is-active{% endif %}">
+                    <a class="navigation__button" href="{{ item.url }}">
+                        <span>{{ item.title }}</span>
+                    </a>                         
+                </li>
+                {% if not loop.last %}
+                <li>
+                /
+                </li>
+                {% endif %}
+            {% endfor %}
+            <div class="navigation__background"></div>
+        </ul>
+    </div>
+{% endif %}
+{% endif %}
+
+
+</div> #}
+footer

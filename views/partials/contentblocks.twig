@@ -1,0 +1,77 @@
+{% for block in post.blocks %}
+
+	{% if block.acf_fc_layout == 'heading' %}
+		{{ block.text }}
+
+		{# {% elseif block.acf_fc_layout == 'text' %}
+			{{ block.text|wpautop }}
+
+          	{% if block.add_buttons and block.buttons|length > 0 %}
+                {% for button in block.buttons %}
+                    {% if button.url_or_file == 'url' %}
+                    	<a href="{{ button.button_url }}">{{ button.button_text }}</a>
+                    {% else %}
+                    	<a href="{{ button.button_file.url }}" target="_blank">{{ button.button_text }}</a>
+                    {% endif %}
+                {% endfor %}
+          	{% endif %}
+
+        {% elseif block.acf_fc_layout == 'text_text' %}
+        	{{ block.text_left }}
+        	{{ block.text_right }} #}
+
+        {% elseif block.acf_fc_layout == 'text_image' %}
+        	
+        	{% if block.media_alignment == 'left' %}
+				{% for media in block.media %}
+					{% if media.acf_fc_layout == 'image' %}
+						<img src="{{ TimberImage(media.image.url).src }}"> 
+					{% elseif media.acf_fc_layout == 'video' %}
+						{{ media.video }}
+					{% endif %}
+				{% endfor %}
+				{{ block.title }} 
+				{{ block.text }}
+				{% if block.add_buttons and block.buttons|length > 0 %}
+					{% for button in block.buttons %}
+						{% if button.url_or_file == 'url' %}
+							<a href="{{ button.button_url }}">{{ button.button_text }}</a>
+						{% else %}
+							<a href="{{ button.button_file.url }}" target="_blank">{{ button.button_text }}</a>
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+    		{# {% else %}
+				{{ block.title }} 
+    			{{ block.text }} 
+				{% if block.add_buttons and block.buttons|length > 0 %}
+					{% for button in block.buttons %}
+						{% if button.url_or_file == 'url' %}
+							<a href="{{ button.button_url }}">{{ button.button_text }}</a>
+						{% else %}
+							<a href="{{ button.button_file.url }}" target="_blank">{{ button.button_text }}</a>
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+				<img src="{{ TimberImage(block.image.url).src }}">  #}
+            {% endif %}
+
+        {# {% elseif block.acf_fc_layout == 'images' %}
+            {% if block.images|length == 1 %}
+              	{% if block.images[0] %}<img src="{{ TimberImage(block.images[0].image.url).src }}">{% endif %}
+                {% else %}
+                  	{% for image in block.images %}
+                      	{% if image.image %}<img src="{{ TimberImage(image.image.url).src }}">{% endif %}
+                  	{% endfor %}
+                {% endif %}
+
+		{% elseif block.acf_fc_layout == 'image_full_width' %}
+			<img src="{{ TimberImage(block.image.url).src }}">
+
+        {% elseif block.acf_fc_layout == 'video' %}
+            {{ block.video }} #}
+
+	{% endif %}
+
+{% endfor %}
+
