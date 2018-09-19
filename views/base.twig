@@ -3,21 +3,24 @@
 <!--[if gt IE 9]><!--><html class="no-js" {{ site.language_attributes }}><!--<![endif]-->
 <head>
     <meta charset="{{ site.charset }}" />
+
     <title>{% if wp_title %}{{ wp_title }}{% else %}{{ site.name }}{% endif %}</title>
 
     <meta http-equiv="Accept-CH" content="DPR, Width, Viewport-Width" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="">
 
     {% include 'partials/meta-favicons.twig' %}
 
-    {% include 'partials/gtm.twig' with {
+    {# TODO ADD GTM #}
+    {# {% include 'partials/gtm.twig' with {
             'code': options.api_tracking.gtm
         } 
-    %}
+    %} #}
 
-    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="{{theme.link}}/assets/dev/css/cantigateatral-main.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script type="application/javascript" src="{{theme.link}}/assets/dev/js/cantigateatral-main.js"></script>
@@ -26,21 +29,26 @@
 </head>
 
 <body class="{{ body_class }}" itemscope itemtype="//schema.org/WebPage">
-
-{#     {% if site.is_home %}
-        {% include 'partials/splash.twig' %}
-    {% endif %} #}
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
     {% include 'partials/header.twig' %}
 
-    {% include 'partials/nav.twig' %}
-
-    {% block content %}{% endblock %}
-
-{#     {% if function('is_page','about') %}
+    {# {% if function('is_page','about') %}
     {% endif %} #}
 
-    {% include 'partials/footer.twig' %}
+    <main>
+
+        {# {% if site.is_home %}
+            {% include 'partials/hero.twig' %}
+        {% endif %} #}
+
+        {% block content %}{% endblock %}
+
+        {% include 'partials/footer.twig' %}
+    
+    </main>
 
     {{ wp_footer }}
     {% block scripts %}{% endblock %}
