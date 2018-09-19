@@ -41,19 +41,6 @@
 						{% endif %}
 					{% endfor %}
 				{% endif %}
-    		{# {% else %}
-				{{ block.title }} 
-    			{{ block.text }} 
-				{% if block.add_buttons and block.buttons|length > 0 %}
-					{% for button in block.buttons %}
-						{% if button.url_or_file == 'url' %}
-							<a href="{{ button.button_url }}">{{ button.button_text }}</a>
-						{% else %}
-							<a href="{{ button.button_file.url }}" target="_blank">{{ button.button_text }}</a>
-						{% endif %}
-					{% endfor %}
-				{% endif %}
-				<img src="{{ TimberImage(block.image.url).src }}">  #}
             {% endif %}
 
         {% elseif block.acf_fc_layout == 'images' %}
@@ -61,7 +48,10 @@
               	{% if block.images[0] %}<img src="{{ TimberImage(block.images[0].image.url).src }}">{% endif %}
                 {% else %}
                   	{% for image in block.images %}
-                      	{% if image.image %}<img src="{{ TimberImage(image.image.url).src }}">{% endif %}
+                      	{% if image.image %}
+						  multi
+						  <img src="{{ TimberImage(image.image.url).src }}">
+						{% endif %}
                   	{% endfor %}
                 {% endif %}
 
