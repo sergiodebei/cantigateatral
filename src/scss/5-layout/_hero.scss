@@ -1,0 +1,24 @@
+.hero{
+    position: relative;
+    &__logo{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 2rem;
+        margin: 0 auto;
+        max-width: 900px;
+        @include transition (.3s);
+        img{
+            max-width: 50%;
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .hero{
+        &__logo{
+            left: 2rem;
+            bottom: 1rem;
+        }
+    }
+}
