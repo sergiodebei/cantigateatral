@@ -112,7 +112,7 @@
                             },
                             "collapsed": "",
                             "min": 0,
-                            "max": 0,
+                            "max": 1,
                             "layout": "block",
                             "button_label": "Add Button",
                             "sub_fields": [
@@ -570,8 +570,8 @@
                 },
                 "56fe9202a7b67": {
                     "key": "56fe9202a7b67",
-                    "name": "images",
-                    "label": "Images",
+                    "name": "gallery",
+                    "label": "Gallery",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -579,7 +579,7 @@
                             "label": "Images",
                             "name": "images",
                             "type": "repeater",
-                            "instructions": "If more then 1 images are added, an slider with arrows will show",
+                            "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -595,6 +595,61 @@
                             "sub_fields": [
                                 {
                                     "key": "field_56fe92aab247c",
+                                    "label": "Image",
+                                    "name": "image",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "thumbnail",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5ba2d6a4c7768": {
+                    "key": "layout_5ba2d6a4c7768",
+                    "name": "slider",
+                    "label": "Slider",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5ba2d6a4c7769",
+                            "label": "Images",
+                            "name": "images",
+                            "type": "repeater",
+                            "instructions": "If more then 1 images are added, a slider with arrows will show",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "Add Image",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5ba2d6a4c776a",
                                     "label": "Image",
                                     "name": "image",
                                     "type": "image",
@@ -682,6 +737,24 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_5ba2d000ab66f": {
+                    "key": "layout_5ba2d000ab66f",
+                    "name": "hr",
+                    "label": "Hr",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5ba2d0ae50acf": {
+                    "key": "layout_5ba2d0ae50acf",
+                    "name": "agenda",
+                    "label": "Agenda",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Block",
@@ -722,5 +795,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1536784141
+    "modified": 1537398563
 }
