@@ -41,7 +41,8 @@
                     <div class="col-6 col-s-12">
 						{% for media in block.media %}
 							{% if media.acf_fc_layout == 'image' %}
-								<img src="{{ TimberImage(media.image.url).src }}"> 
+								<img class="lazy" data-original="{{ TimberImage(media.image.url).src }}" alt="" />
+       							 <noscript><img src="{{ TimberImage(media.image.url).src }}" alt="" /></noscript>
 							{% elseif media.acf_fc_layout == 'video' %}
 								{{ media.video }}
 							{% endif %}
@@ -72,8 +73,7 @@
 		
 		{# TODO gallery DYNAMIC #}
         {% elseif block.acf_fc_layout == 'gallery' %}
-			gallery
-			{# {% include 'partials/gallery.twig' %} #}
+			{% include 'partials/gallery.twig' %}
 
 		{% elseif block.acf_fc_layout == 'slider' %}
 			{% include 'partials/slider.twig' %}
@@ -82,7 +82,6 @@
 			<div class="cb cb--fullwidth">
                 <img class="lazy" data-original="{{ TimberImage(block.image.url).src }}" alt="alt" />
                 <noscript><img src="{{ TimberImage(block.image.url).src }}" alt="alt" /></noscript>
-				{# <img src="{{ TimberImage(block.image.url).src }}"> #}
             </div>
 
         {% elseif block.acf_fc_layout == 'video' %}
