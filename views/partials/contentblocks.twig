@@ -1,65 +1,97 @@
 {% for block in post.blocks %}
 
 	{% if block.acf_fc_layout == 'heading' %}
-		{{ block.text }}
+		<div class="cb cb--title">
+			<h3 class="title">{{ block.text }}</h3>
+		</div>
 
 		{% elseif block.acf_fc_layout == 'text' %}
-			{{ block.text|wpautop }}
+			<div class="cb cb--text">
+                <p>{{ block.text|wpautop }}</p>
 
-          	{% if block.add_buttons and block.buttons|length > 0 %}
-                {% for button in block.buttons %}
-                    {% if button.url_or_file == 'url' %}
-                    	<a href="{{ button.button_url }}">{{ button.button_text }}</a>
-                    {% else %}
-                    	<a href="{{ button.button_file.url }}" target="_blank">{{ button.button_text }}</a>
-                    {% endif %}
-                {% endfor %}
-          	{% endif %}
-
-        {% elseif block.acf_fc_layout == 'text_text' %}
-        	{{ block.text_left }}
-        	{{ block.text_right }}
-
-        {% elseif block.acf_fc_layout == 'text_image' %}
-        	
-        	{% if block.media_alignment == 'left' %}
-				{% for media in block.media %}
-					{% if media.acf_fc_layout == 'image' %}
-						<img src="{{ TimberImage(media.image.url).src }}"> 
-					{% elseif media.acf_fc_layout == 'video' %}
-						{{ media.video }}
-					{% endif %}
-				{% endfor %}
-				{{ block.title }} 
-				{{ block.text }}
+				{# TODO BUTTON STYLE #}
 				{% if block.add_buttons and block.buttons|length > 0 %}
 					{% for button in block.buttons %}
 						{% if button.url_or_file == 'url' %}
-							<a href="{{ button.button_url }}">{{ button.button_text }}</a>
+							<a href="{{ button.button_url }}" class="button">{{ button.button_text }}</a>
 						{% else %}
-							<a href="{{ button.button_file.url }}" target="_blank">{{ button.button_text }}</a>
+							<a href="{{ button.button_file.url }}" target="_blank" class="button">{{ button.button_text }}</a>
 						{% endif %}
 					{% endfor %}
 				{% endif %}
-            {% endif %}
 
-        {% elseif block.acf_fc_layout == 'images' %}
-            {% if block.images|length == 1 %}
-              	{% if block.images[0] %}<img src="{{ TimberImage(block.images[0].image.url).src }}">{% endif %}
-                {% else %}
-                  	{% for image in block.images %}
-                      	{% if image.image %}
-						  multi
-						  <img src="{{ TimberImage(image.image.url).src }}">
+			</div>
+
+        {% elseif block.acf_fc_layout == 'text_text' %}
+			<div class="cb cb--columns">
+                <div class="row">
+                    <div class="col-6 col-s-12">
+						{{ block.text_left }}
+                    </div>
+                    <div class="col-6 col-s-12">
+						{{ block.text_right }}
+                    </div>
+                </div>
+            </div>
+
+        {% elseif block.acf_fc_layout == 'text_image' %}
+
+			<div class="cb cb--columns {% if block.media_alignment == 'right' %}cb--reverse{% endif %}">
+                <div class="row">
+                    <div class="col-6 col-s-12">
+						{% for media in block.media %}
+							{% if media.acf_fc_layout == 'image' %}
+								<img src="{{ TimberImage(media.image.url).src }}"> 
+							{% elseif media.acf_fc_layout == 'video' %}
+								{{ media.video }}
+							{% endif %}
+						{% endfor %}
+                    </div>
+                    <div class="col-6 col-s-12">
+                        <h4 class="title">{{ block.title }}</h4>
+                        <p>{{ block.text }}</p>
+						{% if block.add_buttons and block.buttons|length > 0 %}
+							{% for button in block.buttons %}
+								{% if button.url_or_file == 'url' %}
+									<a href="{{ button.button_url }}" class="button">{{ button.button_text }}</a>
+								{% else %}
+									<a href="{{ button.button_file.url }}" target="_blank" class="button">{{ button.button_text }}</a>
+								{% endif %}
+							{% endfor %}
 						{% endif %}
-                  	{% endfor %}
-                {% endif %}
+                    </div>
+                </div>
+            </div>
+
+		{% elseif block.acf_fc_layout == 'hr' %}
+			<hr>
+
+		{# TODO AGENDA DYNAMIC #}
+		{% elseif block.acf_fc_layout == 'agenda' %}
+			{% include 'partials/agenda.twig' %}
+		
+		{# TODO gallery DYNAMIC #}
+        {% elseif block.acf_fc_layout == 'gallery' %}
+			gallery
+			{# {% include 'partials/gallery.twig' %} #}
+
+		{% elseif block.acf_fc_layout == 'slider' %}
+			{% include 'partials/slider.twig' %}
 
 		{% elseif block.acf_fc_layout == 'image_full_width' %}
-			<img src="{{ TimberImage(block.image.url).src }}">
+			<div class="cb cb--fullwidth">
+                <img class="lazy" data-original="{{ TimberImage(block.image.url).src }}" alt="alt" />
+                <noscript><img src="{{ TimberImage(block.image.url).src }}" alt="alt" /></noscript>
+				{# <img src="{{ TimberImage(block.image.url).src }}"> #}
+            </div>
 
         {% elseif block.acf_fc_layout == 'video' %}
-            {{ block.video }}
+			<div class="cb cb--fullvideo">
+                <div class="video-holder">
+					{{ block.video }} 
+                    {# <iframe width="640" height="360" src="https://www.youtube.com/embed/CNCKPXG0Bpg?feature=oembed" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" data-crossorigin="y"></iframe> #}
+                </div>
+            </div>
 
 	{% endif %}
 

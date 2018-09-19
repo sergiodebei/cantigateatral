@@ -1,8 +1,7 @@
-<nav class="navigation">
-    <ul class="navigation__list">
-
+<nav>
+    <ul class="menu">
         {% for menuitem in menu.get_items %}
-            <li class="">
+            <li class="menu-item">
                 <a href="{{ menuitem.get_link }}">{{ menuitem.title }}</a>
             </li>
                 
@@ -13,4 +12,10 @@
             {% endif %} #}
         {% endfor %}
     </ul>
+
+    {# TODO SWITCH #}
+    {# <ul class="language-toggle">
+        <li><a href="#" class="not-active">EN</a>/</li>
+        <li><a href="#">NL</a></li>
+    </ul> #}
 </nav>
