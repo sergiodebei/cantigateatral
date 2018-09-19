@@ -37,7 +37,7 @@ class StarterSite extends TimberSite {
     $context['menu'] = new TimberMenu();
     $context['site'] = $this;
     // $context['site']->url = BASEURL . '';
-    // $context['site']->assets = './assets/';
+    $context['site']->assets = './assets/';
     $context['site']->is_home = is_front_page();
     return $context;
   }
