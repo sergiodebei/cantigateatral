@@ -19,10 +19,19 @@ $context['body_class']  = 'page-home';
 
 $context['events']    = Timber::get_posts( 
   [ 
-    'post_type'   => 'events', 
-    'orderby'     => 'menu_order',
-    'order'       => 'ASC',
-    'numberposts' => '-1'
+    'post_type'   => 'events',
+    'numberposts' => '3',
+    'meta_key' => 'event_date',
+    'orderby' => 'meta_value_num',
+    'order' => 'ASC',
+    'meta_query' => array(
+      array(
+        'key' => 'event_date',
+        'value' => date('Ymd'),
+        'type' => 'NUMERIC',
+        'compare' => '>=',
+      )
+    )
   ]
 );
 
