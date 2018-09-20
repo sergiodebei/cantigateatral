@@ -1,0 +1,12 @@
+.aside{
+    &__title{
+        margin-bottom: 1rem;
+    }
+    &__value{
+        display: block;
+        // margin-bottom: 1rem;
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+<h5 class="aside__title">price</h5>
+<span class="aside__value">{{ post.price }}</span>
+
+<h5 class="aside__title">Date</h5>
+<span class="aside__value">{{ fn('nlDate', post.event_date|date('l j F Y') ) }}</span>
+
+<h5 class="aside__title">Start</h5>
+<span class="aside__value">{{ post.custom.time }}</span>
+
+<h5 class="aside__title">Door opening</h5>
+<span class="aside__value">{{ post.custom.door_opening }}</span>
+
+
+                
+
+                
