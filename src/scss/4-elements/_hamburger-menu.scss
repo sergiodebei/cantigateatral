@@ -28,17 +28,22 @@
             margin-bottom: 0;
         }
     }
-    &.open{
-        span{
-            transform: rotate(90deg) translate(0px, -6px);
-            width: 28px;
-            &:nth-child(2),&:nth-child(3),&:nth-child(4){
-                opacity: 0;
-                transform: rotate(0deg) scale(0.2, 0.2);
-            }
-            &:last-of-type{
-                transform: rotate(-90deg) translate(0px,6px);
-                height: 6px;
+}
+
+body{
+    &.menu-open{
+        .hamburger-menu{
+            span{
+                transform: rotate(90deg) translate(0px, -6px);
+                width: 28px;
+                &:nth-child(2),&:nth-child(3),&:nth-child(4){
+                    opacity: 0;
+                    transform: rotate(0deg) scale(0.2, 0.2);
+                }
+                &:last-of-type{
+                    transform: rotate(-90deg) translate(0px,6px);
+                    height: 6px;
+                }
             }
         }
     }
