@@ -2,6 +2,7 @@
     &--agenda{
         max-width: 600px;
         margin: 0 auto;
+        padding: 0 20px;
         .agenda__group{
             .event{
                 border-top: 4px solid #f0f0f0;
@@ -17,29 +18,50 @@
                     overflow: hidden;
                 }
                 &__information{
-                    width: calc(100% - 260px);
+                    display: flex;
+                    align-items: center;
                     padding: 4px 20px;
-                    &__date{
-                        font-family: "Roboto", "Arial", "Helvetica", sans-serif;
-                        text-transform: uppercase;
-                        font-size: 11px;
-                        font-weight: 700;
+                    flex: 2;
+                    &__details{
+                        flex: 2;
+                        &__date{
+                            font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+                            text-transform: uppercase;
+                            font-size: 11px;
+                            font-weight: 700;
+                        }
+                        &__title{
+                            color: $black;
+                            margin-bottom: 0;
+                        }
                     }
-                    &__title{
-                        color: $black;
+                    &__link{
+                        width: 130px;
+                        height: 130px;
+                        flex: 0 0 130px;
                     }
-                }
-                &__link{
-                    width: 130px;
-                    height: 130px;
-                    flex: 0 0 130px;
                 }
                 & + .event{
                     margin-top: 20px;
                 }
-                // &:hover{
-                //     box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
-                // }
+                &:hover{
+                    box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .cb{
+        &--agenda{
+            .agenda__group{
+                .event{
+                    &__information{
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+                }
             }
         }
     }
