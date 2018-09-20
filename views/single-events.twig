@@ -1,0 +1,20 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+    <div class="cb cb--title">
+        <h3 class="title"> {{ post.title }}</h3>
+    </div>
+
+    <div class="cb">
+        <div class="row">
+            <div class="col-8 col-s-12 article">
+                {% if post.blocks %}{% include 'partials/contentblocks.twig' %}{% endif %}
+            </div>
+            <div class="col-4 col-s-12 aside">
+                {% include 'partials/aside.twig' %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
