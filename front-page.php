@@ -17,9 +17,9 @@ $context['post']->blocks = $post->get_field('blocks');
 
 $context['body_class']  = 'page-home';
 
-$context['projects']    = Timber::get_posts( 
+$context['events']    = Timber::get_posts( 
   [ 
-    'post_type'   => 'projects', 
+    'post_type'   => 'events', 
     'orderby'     => 'menu_order',
     'order'       => 'ASC',
     'numberposts' => '-1'
