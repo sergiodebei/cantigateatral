@@ -16,7 +16,7 @@
             </a>
             <div class="event__information">
                 <span class="event__information__date">{{ fn('nlDate', event.event_date|date('l j F Y') ) }}</span>
-                <a href="#"><h3 class="event__information__title">{{ event.title }}</h3></a>
+                <a href="{{ event.link }}"><h3 class="event__information__title">{{ event.title }}</h3></a>
             </div>        
             <div class="event_link">
                 {# TODO READ MORE BUTTON VARIABLE #}
