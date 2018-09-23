@@ -1,0 +1,34 @@
+﻿
+.slick-lightbox{
+    .slick-prev, .slick-next {
+        position: absolute;
+        top: 50%;
+        transform: translatey(-50%);
+        padding: 0;
+        cursor: pointer;
+        color: transparent;
+        border: none;
+        outline: none;
+        background: transparent;
+        z-index: 2;
+        &:before{
+            position: absolute;
+            transform: translate(-50%);
+            left: 50%;
+        }
+    }
+    .slick-prev{
+        &:before {
+            font-family: 'FontAwesome';
+            content: "\f104";
+            color: white;
+        }
+    }
+    .slick-next{
+        &:before {
+            font-family: 'FontAwesome';
+            content: "\f105";
+            color: white;
+        }
+    }
+}

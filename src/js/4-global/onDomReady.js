@@ -65,12 +65,38 @@ $(document).on("ready", function () {
         });
     }
 
+    function initSlickLightbox() {
+
+        $('.gallery__fotos').slickLightbox(
+            {
+                itemSelector        : 'a',
+                navigateByKeyboard  : true, 
+            }
+        ).on({
+            // 'show.slickLightbox': function(){ 
+            //     console.log('A `show.slickLightbox` event triggered.'); 
+            // },
+            'shown.slickLightbox': function(){ 
+                $('body').toggleClass('slick-open');
+                // console.log('A `shown.slickLightbox` event triggered.'); 
+            },
+            // 'hide.slickLightbox': function(){ 
+            //     console.log('A `hide.slickLightbox` event triggered.'); 
+            // },
+            'hidden.slickLightbox': function(){ 
+                $('body').toggleClass('slick-open');
+                // console.log('A `hidden.slickLightbox` event triggered.'); 
+            }
+        });
+    }
+
     // INIT
     // if ($('body').hasClass('home')) initHome();
     // if ($('body').hasClass('page-single')) initSlider();
     // if ($('body').hasClass('page-single')) initPhotoSwipeGallery();
     if ($('.slider').length) initSlider();
     if ($('.psgal').length) initPhotoSwipeGallery();
+    if ($('.gallery__fotos').length) initSlickLightbox();
 
     // INIT LAZYLOAD
     $('img.lazy').lazyload({
@@ -79,7 +105,7 @@ $(document).on("ready", function () {
         // load: resize,
         placeholder: ''
     });
-
+      
     // $( ".popup" ).click(function(e) {
 
     //     e.target.tagName === 'IMG' && BigPicture({

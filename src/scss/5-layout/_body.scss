@@ -5,3 +5,9 @@ body {
         padding-top: 5.5rem;
     }
 }
+
+body{
+    &.slick-open{
+        overflow: hidden;
+    }
+}

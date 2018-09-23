@@ -1,0 +1,56 @@
+<div class="cb cb--gallery">
+    <div class="gallery__fotos">
+    {% for image in block.images %}
+        {% if image.url %}
+            <div class="gallery__foto">
+                <a href="{{ TimberImage(image.url).src }}">
+                    <img class="lazy" data-original="{{ TimberImage(image.url).src }}"/>
+                    <noscript><img src="{{ TimberImage(image.url).src }}"/></noscript>
+                </a>
+            </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+</div> 
+
+{# <div class="cb cb--gallery">
+    <div class="gallery__fotos">
+        <div class="gallery__foto">
+            <a href="https://cloud.funda.nl/valentina_media/099/719/340_1440x960.jpg">
+                <img class="lazy" data-original="https://cloud.funda.nl/valentina_media/099/719/340_1440x960.jpg"/>
+                <noscript><img src="https://cloud.funda.nl/valentina_media/099/719/340_1440x960.jpg"/></noscript>
+            </a>
+        </div>
+        <div class="gallery__foto">
+            <a href="https://cloud.funda.nl/valentina_media/099/719/341_1440x960.jpg">
+                <img class="lazy" data-original="https://cloud.funda.nl/valentina_media/099/719/341_1440x960.jpg"/>
+                <noscript><img src="https://cloud.funda.nl/valentina_media/099/719/341_1440x960.jpg"/></noscript>
+            </a>
+        </div>
+        <div class="gallery__foto">
+            <a href="https://cloud.funda.nl/valentina_media/099/719/342_1440x960.jpg">
+                <img class="lazy" data-original="https://cloud.funda.nl/valentina_media/099/719/342_1440x960.jpg"/>
+                <noscript><img src="https://cloud.funda.nl/valentina_media/099/719/342_1440x960.jpg"/></noscript>
+            </a>
+        </div>
+        <div class="gallery__foto">
+            <a href="https://cloud.funda.nl/valentina_media/099/719/343_1440x960.jpg">
+                <img class="lazy" data-original="https://cloud.funda.nl/valentina_media/099/719/343_1440x960.jpg"/>
+                <noscript><img src="https://cloud.funda.nl/valentina_media/099/719/343_1440x960.jpg"/></noscript>
+            </a>
+        </div>
+        <div class="gallery__foto">
+            <a href="https://cloud.funda.nl/valentina_media/099/719/344_1440x960.jpg">
+                <img class="lazy" data-original="https://cloud.funda.nl/valentina_media/099/719/344_1440x960.jpg"/>
+                <noscript><img src="https://cloud.funda.nl/valentina_media/099/719/344_1440x960.jpg"/></noscript>
+            </a>
+        </div>
+        <div class="gallery__foto">
+            <a href="https://cloud.funda.nl/valentina_media/099/719/345_1440x960.jpg">
+                <img class="lazy" data-original="https://cloud.funda.nl/valentina_media/099/719/345_1440x960.jpg"/>
+                <noscript><img src="https://cloud.funda.nl/valentina_media/099/719/345_1440x960.jpg"/></noscript>
+            </a>
+        </div>
+        
+    </div>
+</div>  #}
