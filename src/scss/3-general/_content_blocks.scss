@@ -46,6 +46,7 @@
             -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
             @include transition (.3s);
+            background-color: rgba(255, 255, 255, 0.1);
             opacity: 0;
             &.prev{
                 left: 0; 
