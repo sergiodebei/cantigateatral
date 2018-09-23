@@ -16,7 +16,7 @@ $context                = Timber::get_context();
 $context['post']        = $post;
 $context['post']->blocks = $post->get_field('blocks');
 
-$context['body_class']  = 'page-'.$post->post_name.' is-green';
+$context['body_class']  = 'page-'.$post->post_name;
 
 // WP_Query arguments
 $posts_args = array (
