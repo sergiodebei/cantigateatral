@@ -575,7 +575,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_56fe920cb247a",
+                            "key": "field_5ba6dcbfd68de",
                             "label": "Images",
                             "name": "images",
                             "type": "repeater",
@@ -591,10 +591,10 @@
                             "min": 0,
                             "max": 0,
                             "layout": "table",
-                            "button_label": "Add Image",
+                            "button_label": "",
                             "sub_fields": [
                                 {
-                                    "key": "field_56fe92aab247c",
+                                    "key": "field_5ba6de89d8fbf",
                                     "label": "Image",
                                     "name": "image",
                                     "type": "image",
@@ -618,6 +618,41 @@
                                     "mime_types": ""
                                 }
                             ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5ba41bbfe84b2": {
+                    "key": "layout_5ba41bbfe84b2",
+                    "name": "gallery2",
+                    "label": "Gallery2",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5ba41bbfe84b3",
+                            "label": "Images",
+                            "name": "images",
+                            "type": "gallery",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "min": "",
+                            "max": "",
+                            "insert": "append",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
                         }
                     ],
                     "min": "",
@@ -795,5 +830,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1537398563
+    "modified": 1537662687
 }
