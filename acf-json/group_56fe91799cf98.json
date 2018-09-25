@@ -221,7 +221,7 @@
                                                 {
                                                     "key": "field_5baa6d44dfe33",
                                                     "label": "Url",
-                                                    "name": "li_url",
+                                                    "name": "el_url",
                                                     "type": "text",
                                                     "instructions": "",
                                                     "required": 0,
@@ -568,7 +568,7 @@
                                     },
                                     "button_label": "Add Row",
                                     "min": "",
-                                    "max": ""
+                                    "max": 1
                                 },
                                 {
                                     "key": "field_5baa9cbd046a5",
@@ -577,7 +577,15 @@
                                     "type": "file",
                                     "instructions": "",
                                     "required": 0,
-                                    "conditional_logic": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5baa9c89046a3",
+                                                "operator": "==",
+                                                "value": "file"
+                                            }
+                                        ]
+                                    ],
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
@@ -936,5 +944,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1537908477
+    "modified": 1537910067
 }
