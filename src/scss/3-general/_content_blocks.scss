@@ -13,6 +13,10 @@
         }
     }
     &--text{
+        text-align: center;
+        p{
+            text-align: initial;
+        }
         .button{
             margin-top: 2rem;
         }

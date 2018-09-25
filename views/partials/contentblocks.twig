@@ -8,8 +8,6 @@
 		{% elseif block.acf_fc_layout == 'text' %}
 			<div class="cb cb--text">
                 <p>{{ block.text|wpautop }}</p>
-
-				{# TODO BUTTON STYLE #}
 				{% if block.add_buttons and block.buttons|length > 0 %}
 					{% for button in block.buttons %}
 						{% if button.url_or_file == 'url' %}
