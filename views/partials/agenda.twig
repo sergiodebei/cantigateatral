@@ -8,10 +8,9 @@
         {# {% include 'partials/project-thumb.twig' with { id: loop.index0, project : project } only %} #}
         <div class="event">
             <a class="event__visual" href="{{ event.link }}">
-                {% set thumb = event.get_field('event_thumbnail').url %}
-                {% if thumb %}
-                    <img class="lazy" data-original="{{ TimberImage(thumb).src }}" alt="" />
-                    <noscript><img src="{{ TimberImage(thumb).src }}" alt="" /></noscript>
+                {% if event.event_thumbnail %}
+                    <img class="lazy" data-original="{{ event.event_thumbnail|get_timber_image_src('event') }}"/>
+                    <noscript><img {{ event.event_thumbnail|get_timber_image_responsive('event') }}/></noscript>
                 {% endif %}
             </a>
             <div class="event__information">

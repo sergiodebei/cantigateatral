@@ -1,6 +1,8 @@
 <div class="cb cb--imageslider">
 {% if block.images|length == 1 %}
-    {% if block.images[0] %}<img src="{{ TimberImage(block.images[0].image.url).src }}">{% endif %}
+    {% if block.images[0] %}
+        <img {{ block.images[0].image.id|get_timber_image_responsive('slider') }}>
+    {% endif %}
         {% else %}
         <button type="button" class="control prev">
             <i class="fa fa-angle-left" aria-hidden="true"></i>

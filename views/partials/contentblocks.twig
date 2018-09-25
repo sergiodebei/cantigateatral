@@ -41,8 +41,8 @@
                     <div class="col-6 col-s-12">
 						{% for media in block.media %}
 							{% if media.acf_fc_layout == 'image' %}
-								<img class="lazy" data-original="{{ TimberImage(media.image.url).src }}" alt="" />
-       							 <noscript><img src="{{ TimberImage(media.image.url).src }}" alt="" /></noscript>
+								<img class="lazy" data-original="{{ media.image.id|get_timber_image_src('column') }}"/>
+								<noscript><img {{ media.image.id|get_timber_image_responsive('column') }}/></noscript>
 							{% elseif media.acf_fc_layout == 'video' %}
 								{{ media.video }}
 							{% endif %}
