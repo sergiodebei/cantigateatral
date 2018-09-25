@@ -11,7 +11,7 @@
         <div class="slider">
             {% for image in block.images %}
                 {% if image.image %}
-                    <img src="{{ TimberImage(image.image.url).src }}">
+                    <img {{ image.image.id|get_timber_image_responsive('slider') }}>
                 {% endif %}
             {% endfor %}
         </div>
