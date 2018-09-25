@@ -10,8 +10,9 @@
     figure{
         float: left;
         text-align: center;
-        width: 150px;
-        padding: 5px;
+        // width: calc(100% / 5);
+        width: 180px;
+        padding: 4px;
         margin: 0px;
         box-sizing: border-box;
         figcaption {
@@ -29,6 +30,48 @@
         border: 0;
     }
 }
+
+@media only screen and (max-width: 780px) {
+    .psgal {
+        figure{
+            width: 240px;
+        }
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .psgal {
+        figure{
+            width: 190px;
+        }
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .psgal {
+        figure{
+            width: 150px;
+        }
+    }
+}
+
+// @media only screen and (max-width: 820px) {
+//     .psgal {
+//         figure{
+//             width: calc(100% / 4);
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: 600px) {
+//     .psgal {
+//         figure{
+//             width: calc(100% / 3);
+//         }
+//     }
+// }
+
+
 
 // .msnry {
 //   margin: auto;
