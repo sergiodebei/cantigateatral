@@ -17,6 +17,11 @@ if ( ! class_exists('acf')) {
     } );
     return;
 }
+
+new Timmy\Timmy();
+use Timmy\Helper;
+
+require_once('images.php');
   
 // Set location for the twig files
 Timber::$dirname = array('views');
