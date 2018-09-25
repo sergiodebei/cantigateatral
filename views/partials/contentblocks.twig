@@ -13,7 +13,12 @@
 				{% if block.add_buttons and block.buttons|length > 0 %}
 					{% for button in block.buttons %}
 						{% if button.url_or_file == 'url' %}
-							<a href="{{ button.button_url }}" class="button">{{ button.button_text }}</a>
+							{% if button.button_link[0].acf_fc_layout == 'internal_link' %}
+								<a href="{{ button.button_link[0].il_url }}" class="button">{{ button.button_text }}</a>
+								{% elseif button.button_link[0].acf_fc_layout == 'external_link' %}
+								<a href="{{ button.button_link[0].el_url }}" class="button" target="_blank">{{ button.button_text }}</a>
+							{% endif %}
+							
 						{% else %}
 							<a href="{{ button.button_file.url }}" target="_blank" class="button">{{ button.button_text }}</a>
 						{% endif %}
@@ -54,7 +59,12 @@
 						{% if block.add_buttons and block.buttons|length > 0 %}
 							{% for button in block.buttons %}
 								{% if button.url_or_file == 'url' %}
-									<a href="{{ button.button_url }}" class="button">{{ button.button_text }}</a>
+									{% if button.button_link[0].acf_fc_layout == 'internal_link' %}
+										<a href="{{ button.button_link[0].il_url }}" class="button">{{ button.button_text }}</a>
+										{% elseif button.button_link[0].acf_fc_layout == 'external_link' %}
+										<a href="{{ button.button_link[0].el_url }}" class="button" target="_blank">{{ button.button_text }}</a>
+									{% endif %}
+									
 								{% else %}
 									<a href="{{ button.button_file.url }}" target="_blank" class="button">{{ button.button_text }}</a>
 								{% endif %}
