@@ -70,13 +70,14 @@
 		{% elseif block.acf_fc_layout == 'agenda' %}
 			{% include 'partials/agenda.twig' %}
 		
-		{# TODO gallery DYNAMIC #}
         {% elseif block.acf_fc_layout == 'gallery' %}
 			{% include 'partials/gallery.twig' %}
 
+		{# TODO gallery images size crop #}
 		{% elseif block.acf_fc_layout == 'gallery2' %}
 			{% include 'partials/gallery2.twig' %}
 
+		{# TODO slider images size crop #}
 		{% elseif block.acf_fc_layout == 'slider' %}
 			{% include 'partials/slider.twig' %}
 
