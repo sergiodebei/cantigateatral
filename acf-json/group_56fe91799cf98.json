@@ -162,10 +162,10 @@
                                     "return_format": "value"
                                 },
                                 {
-                                    "key": "field_5717466573776",
-                                    "label": "Button url",
-                                    "name": "button_url",
-                                    "type": "text",
+                                    "key": "field_5baa6d2bdfe32",
+                                    "label": "Button link",
+                                    "name": "button_link",
+                                    "type": "flexible_content",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": [
@@ -182,13 +182,69 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": "",
-                                    "readonly": 0,
-                                    "disabled": 0
+                                    "layouts": {
+                                        "5baa6d4229742": {
+                                            "key": "5baa6d4229742",
+                                            "name": "internal_link",
+                                            "label": "Internal link",
+                                            "display": "block",
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_5baa6d6adfe35",
+                                                    "label": "Url",
+                                                    "name": "il_url",
+                                                    "type": "page_link",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "post_type": "",
+                                                    "taxonomy": "",
+                                                    "allow_null": 0,
+                                                    "allow_archives": 1,
+                                                    "multiple": 0
+                                                }
+                                            ],
+                                            "min": "",
+                                            "max": ""
+                                        },
+                                        "layout_5baa8878f0540": {
+                                            "key": "layout_5baa8878f0540",
+                                            "name": "external_link",
+                                            "label": "External link",
+                                            "display": "block",
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_5baa6d44dfe33",
+                                                    "label": "Url",
+                                                    "name": "li_url",
+                                                    "type": "text",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": "",
+                                                    "prepend": "",
+                                                    "append": "",
+                                                    "maxlength": ""
+                                                }
+                                            ],
+                                            "min": "",
+                                            "max": ""
+                                        }
+                                    },
+                                    "button_label": "Add Row",
+                                    "min": "",
+                                    "max": 1
                                 },
                                 {
                                     "key": "field_5718eee0fa454",
@@ -360,7 +416,7 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_5b91c2911ffbb",
+                            "key": "field_5baa9c19168a5",
                             "label": "Buttons",
                             "name": "buttons",
                             "type": "repeater",
@@ -382,12 +438,12 @@
                             },
                             "collapsed": "",
                             "min": 0,
-                            "max": 0,
+                            "max": 1,
                             "layout": "block",
-                            "button_label": "Add Button",
+                            "button_label": "",
                             "sub_fields": [
                                 {
-                                    "key": "field_5b91c2911ffbc",
+                                    "key": "field_5baa9c7e046a2",
                                     "label": "Button text",
                                     "name": "button_text",
                                     "type": "text",
@@ -406,7 +462,7 @@
                                     "maxlength": ""
                                 },
                                 {
-                                    "key": "field_5b91c2911ffbd",
+                                    "key": "field_5baa9c89046a3",
                                     "label": "Url or file",
                                     "name": "url_or_file",
                                     "type": "radio",
@@ -414,7 +470,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "20",
+                                        "width": "",
                                         "class": "",
                                         "id": ""
                                     },
@@ -424,22 +480,22 @@
                                     },
                                     "allow_null": 0,
                                     "other_choice": 0,
-                                    "save_other_choice": 0,
-                                    "default_value": "url",
-                                    "layout": "horizontal",
-                                    "return_format": "value"
+                                    "default_value": "",
+                                    "layout": "vertical",
+                                    "return_format": "value",
+                                    "save_other_choice": 0
                                 },
                                 {
-                                    "key": "field_5b91c2911ffbe",
-                                    "label": "Button url",
-                                    "name": "button_url",
-                                    "type": "text",
+                                    "key": "field_5baa9caa046a4",
+                                    "label": "Button link",
+                                    "name": "button_link",
+                                    "type": "flexible_content",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": [
                                         [
                                             {
-                                                "field": "field_5b91c2911ffbd",
+                                                "field": "field_5baa9c89046a3",
                                                 "operator": "==",
                                                 "value": "url"
                                             }
@@ -450,28 +506,78 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
+                                    "layouts": {
+                                        "5baa9cb16cd93": {
+                                            "key": "5baa9cb16cd93",
+                                            "name": "internal_link",
+                                            "label": "Internal link",
+                                            "display": "block",
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_5baa9d0e046a7",
+                                                    "label": "Url",
+                                                    "name": "il_url",
+                                                    "type": "page_link",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "post_type": "",
+                                                    "taxonomy": "",
+                                                    "allow_null": 0,
+                                                    "allow_archives": 1,
+                                                    "multiple": 0
+                                                }
+                                            ],
+                                            "min": "",
+                                            "max": ""
+                                        },
+                                        "layout_5baa9d17046a8": {
+                                            "key": "layout_5baa9d17046a8",
+                                            "name": "external_link",
+                                            "label": "External link",
+                                            "display": "block",
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_5baa9d69046a9",
+                                                    "label": "Url",
+                                                    "name": "el_url",
+                                                    "type": "text",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": "",
+                                                    "prepend": "",
+                                                    "append": "",
+                                                    "maxlength": ""
+                                                }
+                                            ],
+                                            "min": "",
+                                            "max": ""
+                                        }
+                                    },
+                                    "button_label": "Add Row",
+                                    "min": "",
+                                    "max": ""
                                 },
                                 {
-                                    "key": "field_5b91c2911ffbf",
+                                    "key": "field_5baa9cbd046a5",
                                     "label": "Button file",
                                     "name": "button_file",
                                     "type": "file",
                                     "instructions": "",
                                     "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_5b91c2911ffbd",
-                                                "operator": "==",
-                                                "value": "file"
-                                            }
-                                        ]
-                                    ],
+                                    "conditional_logic": 0,
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
@@ -830,5 +936,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1537662687
+    "modified": 1537908477
 }
