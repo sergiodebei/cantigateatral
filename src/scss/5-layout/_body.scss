@@ -7,7 +7,8 @@ body {
 }
 
 body{
-    &.slick-open{
+    &.slick-open,
+    &.menu-open{
         overflow: hidden;
     }
 }
