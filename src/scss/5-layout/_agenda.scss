@@ -15,7 +15,7 @@
                     width: 130px;
                     height: 130px;
                     flex: 0 0 130px;
-                    overflow: hidden;
+                    // overflow: hidden;
                 }
                 &__information{
                     display: flex;
@@ -24,6 +24,7 @@
                     flex: 2;
                     &__details{
                         flex: 2;
+                        width: 100%;
                         &__date{
                             font-family: "Roboto", "Arial", "Helvetica", sans-serif;
                             text-transform: uppercase;
@@ -34,11 +35,6 @@
                             color: $black;
                             margin-bottom: 0;
                         }
-                    }
-                    &__link{
-                        width: 130px;
-                        height: 130px;
-                        flex: 0 0 130px;
                     }
                 }
                 & + .event{
@@ -57,9 +53,27 @@
         &--agenda{
             .agenda__group{
                 .event{
+                    &__visual{
+                        width: 110px;
+                        height: 110px;
+                        flex: 0 0 110px;
+                        padding-left: 8px;
+                        align-self: flex-end;
+                    }
                     &__information{
                         flex-direction: column;
                         align-items: flex-start;
+                        padding: 0px 8px 4px;
+                        &__details{
+                            &__title{
+                                font-size: 2rem;
+                            }
+                        }
+                        &__link{
+                            .button{
+                                margin-bottom: 7px;
+                            }
+                        }
                     }
                 }
             }

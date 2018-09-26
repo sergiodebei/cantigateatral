@@ -148,6 +148,11 @@ header{
 @media only screen and (max-width: 500px) {
     header{
         .header_inner{
+            .logo{
+                img, svg{
+                    height: 36px;
+                }
+            }
             nav{
                 width: 100%;
             }
