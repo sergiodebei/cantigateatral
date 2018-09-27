@@ -9,13 +9,14 @@
         <div class="event">
             <a class="event__visual" href="{{ event.link }}">
                 {% if event.event_thumbnail %}
-                    <img class="lazy" data-original="{{ event.event_thumbnail|get_timber_image_src('event') }}"/>
-                    <noscript><img {{ event.event_thumbnail|get_timber_image_responsive('event') }}/></noscript>
+                    {# TODO #}
+                    {# <img class="lazy" data-original="{{ event.event_thumbnail|get_timber_image_src('event') }}"/>
+                    <noscript><img {{ event.event_thumbnail|get_timber_image_responsive('event') }}/></noscript> #}
                 {% endif %}
             </a>
             <div class="event__information">
                 <div class="event__information__details">
-                    <span class="event__information__details__date">{{ fn('nlDate', event.event_date|date('l j F Y') ) }}</span>
+                    <span class="event__information__details__date">{{ fn('nlDate', event.event_date|date('j F Y') ) }}</span>
                     <a href="{{ event.link }}"><h3 class="event__information__details__title">{{ event.title }}</h3></a>
                 </div>        
                 <div class="event__information__link">

@@ -1,5 +1,11 @@
 <?php
 
+    add_image_size('slider', 1400, 586, true);
+    add_image_size('column', 437, 350, true);
+    add_image_size('event', 130, 130, true);
+    add_image_size('lightbox-preview-hor', 300, 225, true);
+    add_image_size('lightbox-preview-ver', 225, 130, true);
+  
 // Setup theme with Timber
 
 // Check if Timber plugin is active and prompts an error if not
@@ -18,10 +24,10 @@ if ( ! class_exists('acf')) {
     return;
 }
 
-new Timmy\Timmy();
-use Timmy\Helper;
+// new Timmy\Timmy();
+// use Timmy\Helper;
 
-require_once('images.php');
+// require_once('images.php');
   
 // Set location for the twig files
 Timber::$dirname = array('views');
@@ -48,7 +54,7 @@ class StarterSite extends TimberSite {
     add_action( 'init', array( $this, 'register_post_types' ) );
     // add_action( 'init', array( $this, 'register_taxonomies' ) );
     // add_action( 'init', array($this, 'option_page') );
-    // add_action( 'init', array($this, 'register_image_sizes'));
+    // add_action( 'after_setup_theme', array($this, 'register_image_sizes'));
     // add_filter( 'tiny_mce_before_init', array( $this, 'wptiny' ) );
     add_filter( 'show_admin_bar', array( $this, 'my_function_admin_bar' ) );
     // add_filter( 'upload_mimes', array( $this, 'cc_mime_types' ) );
@@ -189,14 +195,18 @@ class StarterSite extends TimberSite {
         // thumbnail    - 150, 150, true
         // medium       - 300, 300, false
         // large        - 1024, 1024, false
-
+    
         // Additional sizes
         // FORCE CROP
-        add_image_size('thumbnail_large', 300, 300, true);
-
+        add_image_size('slider', 1400, 586, true);
+        add_image_size('column', 437, 350, true);
+        add_image_size('event', 130, 130, true);
+        add_image_size('lightbox-preview-hor', 300, 225, true);
+        add_image_size('lightbox-preview-ver', 225, 130, true);
+    
         // NO CROP
-        add_image_size('poster', 1000, 500, false);
-        add_image_size('content', 1000, 1000, false);
+        // add_image_size('poster', 1000, 500, false);
+        // add_image_size('content', 1000, 1000, false);
     }
     
 	// Set wysiwyg editor height

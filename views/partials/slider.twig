@@ -1,7 +1,8 @@
 <div class="cb cb--imageslider">
 {% if block.images|length == 1 %}
     {% if block.images[0] %}
-        <img {{ block.images[0].image.id|get_timber_image_responsive('slider') }}>
+        {# <img {{ block.images[0].image.id|get_timber_image_responsive('slider') }}> #}
+        <img src="{{ TimberImage(block.images[0].image.sizes.slider) }}" alt="alt" />
     {% endif %}
         {% else %}
         <button type="button" class="control prev">
@@ -13,7 +14,8 @@
         <div class="slider">
             {% for image in block.images %}
                 {% if image.image %}
-                    <img {{ image.image.id|get_timber_image_responsive('slider') }}>
+                    {# <img {{ image.image.id|get_timber_image_responsive('slider') }}> #}
+                     <img src="{{ TimberImage(image.image.sizes.slider) }}" alt="alt" />
                 {% endif %}
             {% endfor %}
         </div>
