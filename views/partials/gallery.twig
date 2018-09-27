@@ -16,9 +16,11 @@
                     <figure class="msnry_item" itemscope itemtype="http://schema.org/ImageObject">
                         <a href="{{ TimberImage(image.image.url).src|resize(width, height) }}" itemprop="contentUrl" data-size="{{width}}x{{height}}" data-caption="">
                             {% if image.image.width > image.image.height %}
-                                <img {{ image.image.id|get_timber_image_responsive('lightbox-preview-hor') }} itemprop="thumbnail" alt="" />
+                                {# <img {{ image.image.id|get_timber_image_responsive('lightbox-preview-hor') }} itemprop="thumbnail" alt="" />#}
+                                <img src="{{ TimberImage(image.image.sizes['lightbox-preview-hor']) }}" itemprop="thumbnail" alt="{{ image.image.alt }}" /> 
                                 {% else %}
-                                <img {{ image.image.id|get_timber_image_responsive('lightbox-preview-ver') }} itemprop="thumbnail" alt="" />
+                                {# <img {{ image.image.id|get_timber_image_responsive('lightbox-preview-ver') }} itemprop="thumbnail" alt="" /> #}
+                                <img src="{{ TimberImage(image.image.sizes['lightbox-preview-ver']) }}" itemprop="thumbnail" alt="{{ image.image.alt }}" />
                             {% endif %}
                         </a>
                         <figcaption class="photoswipe-gallery-caption"></figcaption>
