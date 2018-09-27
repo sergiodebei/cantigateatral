@@ -10,8 +10,11 @@
             <a class="event__visual" href="{{ event.link }}">
                 {% if event.event_thumbnail %}
                     {# TODO #}
+                    {% set thumb = event.get_field('event_thumbnail') %}
                     {# <img class="lazy" data-original="{{ event.event_thumbnail|get_timber_image_src('event') }}"/>
                     <noscript><img {{ event.event_thumbnail|get_timber_image_responsive('event') }}/></noscript> #}
+                    <img class="lazy" data-original="{{ TimberImage(thumb.sizes.event) }}" alt="{{thumb.alt}}" />
+                    <noscript><img src="{{ TimberImage(thumb.sizes.event) }}" alt="{{thumb.alt}}"/></noscript>
                 {% endif %}
             </a>
             <div class="event__information">
