@@ -19,6 +19,7 @@
         }
         .button{
             margin-top: 2rem;
+            margin-bottom: 0;
         }
     }
     &--columns{
@@ -27,6 +28,7 @@
         }
         .button{
             margin-top: 2rem;
+            margin-bottom: 0;
         }
         img{
             width: 100%;
@@ -101,5 +103,11 @@
         &--fullwidth{
             margin: 4rem 0 0 !important;
         }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .cb{
+        margin-top: 3rem !important; 
     }
 }
