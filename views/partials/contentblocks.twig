@@ -93,8 +93,8 @@
 
 		{% elseif block.acf_fc_layout == 'image_full_width' %}
 			<div class="cb cb--fullwidth">
-                <img class="lazy" data-original="{{ TimberImage(block.image.url).src }}" alt="alt" />
-                <noscript><img src="{{ TimberImage(block.image.url).src }}" alt="alt" /></noscript>
+                <img class="lazy" data-original="{{ TimberImage(block.image.url).src }}" alt="{{block.image.alt}}" />
+                <noscript><img src="{{ TimberImage(block.image.url).src }}" alt="{{block.image.alt}}" /></noscript>
             </div>
 
         {% elseif block.acf_fc_layout == 'video' %}

@@ -4,8 +4,8 @@
         {% if image.url %}
             <div class="gallery__foto">
                 <a href="{{ TimberImage(image.url).src }}">
-                    <img class="lazy" data-original="{{ TimberImage(image.url).src }}"/>
-                    <noscript><img src="{{ TimberImage(image.url).src }}"/></noscript>
+                    <img class="lazy" data-original="{{ TimberImage(image.url).src }}" alt="{{image.alt}}"/>
+                    <noscript><img src="{{ TimberImage(image.url).src }}" alt="{{image.alt}}"/></noscript>
                 </a>
             </div>
         {% endif %}
