@@ -21,7 +21,7 @@ $(document).on("ready", function () {
 
     function initSlider(){
         // console.log('page-single');
-        console.log('init-slider');
+        // console.log('init-slider');
         // SLIDER
         slider = $('.slider').slick({
             autoplay: true,
