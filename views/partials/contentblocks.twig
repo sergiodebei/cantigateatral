@@ -49,7 +49,7 @@
 								<img class="lazy" data-original="{{ TimberImage(media.image.sizes.column) }}" alt="{{ media.image.alt }}" />
 								<noscript><img src="{{ TimberImage(media.image.sizes.column) }}" alt="{{ media.image.alt }}" /></noscript>
 							{% elseif media.acf_fc_layout == 'video' %}
-								{{ media.video }}
+								{% include 'partials/lazy-video.twig' with { image : media.video_preview.sizes.column, video: media.video, cropx: 436, cropy: 245 } %}
 							{% endif %}
 						{% endfor %}
                     </div>
@@ -99,10 +99,7 @@
 
         {% elseif block.acf_fc_layout == 'video' %}
 			<div class="cb cb--fullvideo">
-                <div class="video-holder">
-					{{ block.video }} 
-                    {# <iframe width="640" height="360" src="https://www.youtube.com/embed/CNCKPXG0Bpg?feature=oembed" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" data-crossorigin="y"></iframe> #}
-                </div>
+				{% include 'partials/lazy-video.twig' with { image : block.video_preview.sizes.large, video: block.video, cropx: 900, cropy: 500 } %}
             </div>
 
 	{% endif %}

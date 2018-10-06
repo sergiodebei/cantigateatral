@@ -1,0 +1,8 @@
+<div class="lazy-video">
+
+    <div class="lazy-video__preview" style="background-image: url({{ image|resize(cropx,cropy) }})">
+      {# <div class="lazy-video__icon"></div> #}
+    </div>
+    <noscript id="lazy-video" class="lazy-video__embed">{{ video }}</noscript>
+
+</div>
