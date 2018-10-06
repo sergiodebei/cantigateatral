@@ -10,6 +10,26 @@
         <div class="row">
             <div class="col-8 col-s-12 article">
                 {% if post.blocks %}{% include 'partials/contentblocks.twig' %}{% endif %}
+
+            {# TODO Comments #}
+            {# <section class="comment-box">
+				<!-- comments -->
+				<div class="comments">
+				    {% if post.comments %}
+					<h3> comments </h3>
+					{% for cmt in post.comments %}
+					    {% include "partials/comment.twig" with {comment:cmt} %}
+					{% endfor %}
+				    {% endif %}
+				</div>
+
+				{% if post.comment_status == "closed" %}
+					<p> comments for this post are closed </p>
+				{% else %}
+				    <!-- comment form -->
+				    {% include "partials/comment-form.twig" %}
+				{% endif %}
+			</section> #}
             </div>
             <div class="col-4 col-s-12 aside">
                 {% include 'partials/aside.twig' %}
