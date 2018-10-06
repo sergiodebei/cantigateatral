@@ -6,6 +6,16 @@
     add_image_size('lightbox-preview-hor', 300, 225, true);
     add_image_size('lightbox-preview-ver', 225, 300, true);
   
+    acf_add_options_page(
+        array(
+            'page_title' 	=> 'Options',
+            'menu_title'	=> 'Options',
+            'menu_slug' 	=> 'options',
+            'capability'	=> 'edit_posts',
+            'redirect'      => false
+        )
+    );
+
     // function my_acf_google_map_api( $api ){
     //     $api['key'] = AIzaSyDhTuXbe0SWdE1lknDnE7Fg0qGaXV3ZgRw;
     //     return $api;
@@ -76,7 +86,7 @@ class StarterSite extends TimberSite {
 
 	// Add menu support
 	function add_menu_support(){
-		add_theme_support( 'menus' );
+        add_theme_support( 'menus' );
     }
     
 	// Register the names of the menus
@@ -136,7 +146,7 @@ class StarterSite extends TimberSite {
         remove_menu_page( 'edit.php' );                   //Posts
         // remove_menu_page( 'upload.php' );                 //Media
         // remove_menu_page( 'edit.php?post_type=page' );    //Pages
-        remove_menu_page( 'edit-comments.php' );          //Comments
+        // remove_menu_page( 'edit-comments.php' );          //Comments
         // remove_menu_page( 'themes.php' );                 //Appearance
         // remove_menu_page( 'plugins.php' );                //Plugins
         // remove_menu_page( 'users.php' );                  //Users
@@ -163,7 +173,7 @@ class StarterSite extends TimberSite {
         'exclude_from_search' => false,
         'rewrite' => array('slug' => 'agenda'),
         'taxonomies' => array('category'),
-        'supports' => array('revisions', 'title','menu_order', 'page-attributes')
+        'supports' => array('revisions', 'title','menu_order', 'page-attributes','comments','excerpt', 'editor')
         )
     );
 
@@ -187,10 +197,10 @@ class StarterSite extends TimberSite {
     function option_page() {
         acf_add_options_page(
             array(
-                'page_title'    => 'Options',
-                'menu_title'    => 'Options',
-                'menu_slug'     => 'project-options',
-                'capability'    => 'edit_posts',
+                'page_title' 	=> 'Options',
+                'menu_title'	=> 'Options',
+                'menu_slug' 	=> 'options',
+                'capability'	=> 'edit_posts',
                 'redirect'      => false
             )
         );

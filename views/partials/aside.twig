@@ -1,13 +1,13 @@
-<h5 class="aside__title">price</h5>
+<h5 class="aside__title">{{ options.price }}</h5>
 <span class="aside__value">&euro; {{ post.price }}</span>
 
-<h5 class="aside__title">Date</h5>
+<h5 class="aside__title">{{ options.date }}</h5>
 <span class="aside__value">{{ fn('nlDate', post.event_date|date('l j F Y') ) }}</span>
 
-<h5 class="aside__title">Start</h5>
+<h5 class="aside__title">{{ options.time }}</h5>
 <span class="aside__value">{{ post.custom.time }}</span>
 
-<h5 class="aside__title">Where</h5>
+<h5 class="aside__title">{{ options.location }}</h5>
 {# <span class="aside__value">{{ post.custom.map|print_r }}</span> #}
 <span class="aside__value">
     <a href="https://www.google.com/maps/search/?api=1&query={{post.custom.map.lat}},{{post.custom.map.lng}}">{{ post.custom.map.address }}</a>

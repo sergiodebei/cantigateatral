@@ -14,6 +14,7 @@ $post                   = Timber::get_post();
 $context                = Timber::get_context();
 $context['post']        = $post;
 $context['post']->blocks = $post->get_field('blocks');
+$context['options'] = get_fields('options');
 
 $context['body_class']  = 'page-home';
 
