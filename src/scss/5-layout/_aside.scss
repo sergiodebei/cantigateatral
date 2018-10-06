@@ -10,3 +10,14 @@
         }
     }
 }
+
+.map {
+	width: 100%;
+	height: 250px;
+	// border: #ccc solid 1px;
+	margin: 20px 0;
+}
+
+.map img {
+   max-width: inherit !important;
+}
