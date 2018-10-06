@@ -90,6 +90,10 @@ $(document).on("ready", function () {
         });
     }
 
+    function initMap() {
+
+    }
+
     // INIT
     // if ($('body').hasClass('home')) initHome();
     // if ($('body').hasClass('page-single')) initSlider();
@@ -97,6 +101,7 @@ $(document).on("ready", function () {
     if ($('.slider').length) initSlider();
     if ($('.psgal').length) initPhotoSwipeGallery();
     if ($('.gallery__fotos').length) initSlickLightbox();
+    // if($('.map').length) initMap();
 
     // INIT LAZYLOAD
     $('img.lazy').lazyload({
