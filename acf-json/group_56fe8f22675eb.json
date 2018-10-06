@@ -86,11 +86,11 @@
             "disabled": 0
         },
         {
-            "key": "field_5b17d6f7c270a",
-            "label": "Door opening",
-            "name": "door_opening",
-            "type": "text",
-            "instructions": "Format like this: 20:00 - 22:00",
+            "key": "field_5bb8a5635277c",
+            "label": "Map",
+            "name": "map",
+            "type": "google_map",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -98,11 +98,10 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "20:00 - 22:00",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "center_lat": "52.3545653",
+            "center_lng": "4.7585408",
+            "zoom": "",
+            "height": ""
         }
     ],
     "location": [
@@ -124,5 +123,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1538066017
+    "modified": 1538828289
 }
