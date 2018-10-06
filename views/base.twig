@@ -14,14 +14,11 @@
 
     {% include 'partials/meta-favicons.twig' %}
 
-    {# TODO ADD GTM #}
-    {# {% include 'partials/gtm.twig' with {
-            'code': options.api_tracking.gtm
-        } 
-    %} #}
+    {% include 'partials/gtm.twig' %}
 
     <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto" rel="stylesheet">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    {# <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhTuXbe0SWdE1lknDnE7Fg0qGaXV3ZgRw"></script> #}
     <link rel="stylesheet" href="{{theme.link}}/assets/dev/css/cantigateatral-main.css">
     <script type="application/javascript" src="{{theme.link}}/assets/dev/js/cantigateatral-main.js"></script>
 
