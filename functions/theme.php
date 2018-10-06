@@ -6,6 +6,18 @@
     add_image_size('lightbox-preview-hor', 300, 225, true);
     add_image_size('lightbox-preview-ver', 225, 300, true);
   
+    // function my_acf_google_map_api( $api ){
+    //     $api['key'] = AIzaSyDhTuXbe0SWdE1lknDnE7Fg0qGaXV3ZgRw;
+    //     return $api;
+    // }
+    // add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+    // function my_acf_init() {
+    //     acf_update_setting('google_api_key', 'AIzaSyDhTuXbe0SWdE1lknDnE7Fg0qGaXV3ZgRw');
+    // }
+    // add_action('acf/init', 'my_acf_init');
+
+
 // Setup theme with Timber
 
 // Check if Timber plugin is active and prompts an error if not
