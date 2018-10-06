@@ -41,6 +41,7 @@ header{
                 margin: 0;
                 padding: 0;
                 li{
+                    position: relative;
                     padding: 10px 0;
                     display: inline-block;
                     @include transition (.3s);
@@ -51,9 +52,37 @@ header{
                         font-weight: 500;
                         @include transition (.3s);
                     }
+                    .menu{
+                        position: absolute;
+                        background: #fff;
+                        border-radius: 0px;
+                        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+                        right: 0;
+                        list-style: none;
+                        margin: 0;
+                        opacity: 0;
+                        padding: 0px 5px;
+                        position: absolute;
+                        top: 38px;
+                        -webkit-transition: all 0.25s;
+                        transition: all 0.25s;
+                        visibility: hidden;
+                        width: 200px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                        li{
+                            padding: 5px 0;
+                        }
+                    }
                     &.active, &:hover, &:focus{
-                        a{
-                            color: $grey-light;
+                        // a:first-child{
+                        //     color: $grey-light;
+                        // }
+                        .menu{
+                            opacity: 1;
+                            top: 44px;
+                            visibility: visible;
                         }
                     }
                 }
