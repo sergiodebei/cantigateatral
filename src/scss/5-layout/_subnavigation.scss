@@ -1,0 +1,26 @@
+.header--subnavigation {
+    transform: translateY(-100%);
+    background: #000000;
+    top: 55px;
+    z-index: 9;
+    &__inner{
+        justify-content: flex-end;
+        nav{
+            .menu{
+                li{
+                    a{
+                        color: #fff;
+                    }
+                    &:last-child{
+                        a{
+                            padding-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &--active{
+        transform: translateY(0);
+    }
+}

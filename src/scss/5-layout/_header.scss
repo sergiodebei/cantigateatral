@@ -1,11 +1,12 @@
-header{
+header, .header--subnavigation{
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
+    // background-color: rgba(255, 255, 255, 0.9);
+    background-color: #fff;
     z-index: 10;
     position: fixed;
     // opacity: 0;
     @include transition (.3s);
-    .header_inner{
+    .header_inner, &__inner{
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -45,12 +46,22 @@ header{
                     padding: 10px 0;
                     display: inline-block;
                     @include transition (.3s);
-                    a{
+                    a, span{
                         font-size: 14px;
                         padding: 10px;
                         color: $black;
                         font-weight: 500;
                         @include transition (.3s);
+                    }
+                    &.menu-item__parent{
+                        span{
+                            padding-right: 0;
+                        }
+                        &.menu-item__parent--active{
+                            span{
+                                color: $grey-light;
+                            }
+                        }
                     }
                     .menu{
                         position: absolute;
@@ -76,9 +87,10 @@ header{
                         }
                     }
                     &.active, &:hover, &:focus{
-                        // a:first-child{
-                        //     color: $grey-light;
-                        // }
+                        a, span{
+                            color: $grey-light;
+                            cursor: pointer;
+                        }
                         .menu{
                             opacity: 1;
                             top: 44px;
@@ -111,9 +123,6 @@ header{
                             cursor: default;
                             color: #000;
                         }
-                    }
-                    span{
-
                     }
                 }
             }
