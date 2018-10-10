@@ -85,9 +85,9 @@
 					</g>
 				</svg>
 			</a>
-			{# {% include 'partials/nav.twig' %} #}
 			<nav>
-				{% include "partials/menu.twig" with {'menu': menu.get_items} %}
+				{% include "partials/menu.twig" with {'menu': menu.get_items, 'level': 1 } %}
+				{% include "partials/switch.twig" %}
 			</nav>
 			<div class="hamburger-menu">
 				<div class="bar">
@@ -101,3 +101,7 @@
 		</div>
 	</div>
 </header>
+
+{% include "partials/submenu.twig" %}
+
+
