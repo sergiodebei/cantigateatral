@@ -2,7 +2,7 @@ header, .header--subnavigation{
     width: 100%;
     // background-color: rgba(255, 255, 255, 0.9);
     background-color: #fff;
-    z-index: 10;
+    z-index: 11;
     position: fixed;
     // opacity: 0;
     @include transition (.3s);
@@ -37,7 +37,6 @@ header, .header--subnavigation{
             .menu, .language-toggle{
                 display: flex;
                 justify-content: flex-end; 
-                
                 text-transform: uppercase; 
                 margin: 0;
                 padding: 0;
@@ -57,44 +56,16 @@ header, .header--subnavigation{
                         span{
                             padding-right: 0;
                         }
-                        &.menu-item__parent--active{
+                        &--active{
                             span{
                                 color: $grey-light;
                             }
-                        }
-                    }
-                    .menu{
-                        position: absolute;
-                        background: #fff;
-                        border-radius: 0px;
-                        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-                        right: 0;
-                        list-style: none;
-                        margin: 0;
-                        opacity: 0;
-                        padding: 0px 5px;
-                        position: absolute;
-                        top: 38px;
-                        -webkit-transition: all 0.25s;
-                        transition: all 0.25s;
-                        visibility: hidden;
-                        width: 200px;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: flex-end;
-                        li{
-                            padding: 5px 0;
                         }
                     }
                     &.active, &:hover, &:focus{
                         a, span{
                             color: $grey-light;
                             cursor: pointer;
-                        }
-                        .menu{
-                            opacity: 1;
-                            top: 44px;
-                            visibility: visible;
                         }
                     }
                 }
@@ -105,15 +76,9 @@ header, .header--subnavigation{
                     padding-right: 0;
                     &:first-child{
                         padding-right: 0;
-                        // a{
-                        //     padding-right: 0; 
-                        // }
                     }
                     &:last-child{
                         padding-left: 0; 
-                        // a{
-                        //     padding-left: 0;
-                        // }
                     }
                     a{
                         font-weight: 300;
@@ -141,14 +106,13 @@ header, .header--subnavigation{
                 display: block;
             }
             nav{
-                box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
+                // box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
                 position: fixed;
                 width: 100vw;
                 height: 100vh;
                 top: 0;
                 right: 0;
                 padding: 5.5rem 0 0;
-                // z-index: 1;
                 background-color: white;
                 transform-origin: 0% 0%;
                 transform: translate(100%, 0);
@@ -164,27 +128,20 @@ header, .header--subnavigation{
                     width: 100%;
                     background-color: #cecccc;
                     li{
-                        padding-right: 0px;
-                        &:last-child{
-                            padding-right: 0px; 
-                        }
-                        a{
+                        a, span{
                             font-size: 16px;
                             &:hover{
                                 color: white;
                             }
                         }
-                        .menu{
-                            align-items: center;
-                            right: initial;
-                            left: 50%;
-                            transform: translateX(-50%);
-                            height: auto;
-                            li{
-                                a{
-                                    &:hover{
-                                        color: #cecccc;
-                                    }
+                        &.menu-item__parent{
+                            span{
+                                padding-right: 10px;
+                                color: $black;
+                            }
+                            &--active{
+                                span{
+                                    color: $white;
                                 }
                             }
                         }
@@ -215,8 +172,8 @@ header, .header--subnavigation{
                 .menu{
                     // align-items: center;
                     li{
-                        a{
-                            font-style: 30px;
+                        a, span{
+                            font-size: 30px;
                         }
                     }
                 }

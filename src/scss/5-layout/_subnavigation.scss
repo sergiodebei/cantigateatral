@@ -1,8 +1,9 @@
 .header--subnavigation {
     transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
     background: #000000;
     top: 55px;
-    z-index: 9;
+    z-index: 10;
     &__inner{
         justify-content: flex-end;
         nav{
@@ -22,5 +23,69 @@
     }
     &--active{
         transform: translateY(0);
+    }
+    &__close{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .header--subnavigation {
+        bottom: 0;
+        z-index: 11;
+        transform-origin: 0% 0%;
+        transform: translate(100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+        .container{
+            height: 100%;
+        }
+        &__inner{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            nav{
+                .menu{
+                    flex-direction: column;
+                    align-items: center;
+                    li{
+                        a{
+                            font-size: 30px;
+                        }
+                        &:last-child{
+                            a{
+                                padding-right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &--active{
+            // transform: translateY(0);
+            z-index: 11;
+            // transform: translateX(0);
+            transform: translate(0%, 0);
+        }
+        &__close{
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 18px;
+            color: $black;
+            visibility: hidden;
+            &:before{
+                position: absolute;
+                font-family: 'FontAwesome';
+                content: "\f00d";
+                color: $white;
+                font-size: 40px;
+                visibility: visible;
+            }
+            &:hover{
+                cursor: pointer;
+            }
+        }
     }
 }
