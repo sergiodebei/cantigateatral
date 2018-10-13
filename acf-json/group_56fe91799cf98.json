@@ -952,6 +952,15 @@
                     "sub_fields": [],
                     "min": "",
                     "max": ""
+                },
+                "layout_5bc2677d49525": {
+                    "key": "layout_5bc2677d49525",
+                    "name": "contact_form",
+                    "label": "Contact form",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Block",
@@ -992,5 +1001,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1538781829
+    "modified": 1539467151
 }
