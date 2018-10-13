@@ -17,6 +17,27 @@
                     flex: 0 0 130px;
                     // overflow: hidden;
                 }
+                &__date{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    top: 0; left: 0; bottom: 0; right: 0;
+                    span{
+                        &:first-child{
+                            text-transform: uppercase;
+                            font-size: 3.4rem;
+                            line-height: 3.4rem;
+                        }
+                        &:nth-child(2){
+                            font-size: 1.8rem;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
                 &__information{
                     display: flex;
                     align-items: center;
