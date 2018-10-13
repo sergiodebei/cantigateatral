@@ -17,10 +17,15 @@
                         <img class="lazy" data-original="{{ TimberImage(thumb.sizes.event) }}" alt="{{thumb.alt}}" />
                         <noscript><img src="{{ TimberImage(thumb.sizes.event) }}" alt="{{thumb.alt}}"/></noscript>
                     {% endif %}
+                    <div class="event__date">
+                        <span>{{event.event_date|date('j')}}</span>
+                        <span>{{event.event_date|date('M')}}</span>
+                        {# <span>{{event.event_date|date('Y')}}</span> #}
+                    </div>
                 </a>
                 <div class="event__information">
                     <div class="event__information__details">
-                        <span class="event__information__details__date">{{ fn('nlDate', event.event_date|date('j F Y') ) }}</span>
+                        {# <span class="event__information__details__date">{{ fn('nlDate', event.event_date|date('j F Y') ) }}</span> #}
                         <a href="{{ event.link }}"><h3 class="event__information__details__title">{{ event.title }}</h3></a>
                     </div>        
                     <div class="event__information__link">
