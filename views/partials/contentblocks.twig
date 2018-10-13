@@ -102,6 +102,9 @@
 				{% include 'partials/lazy-video.twig' with { image : block.video_preview.sizes.large, video: block.video, cropx: 900, cropy: 500 } %}
             </div>
 
+		{% elseif block.acf_fc_layout == 'contact_form' %}
+			{% include 'partials/contact_form.twig' %}
+
 	{% endif %}
 
 {% endfor %}
