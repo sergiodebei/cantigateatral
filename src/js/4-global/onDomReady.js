@@ -132,6 +132,8 @@ $(document).on("ready", function () {
         // load: resize,
         placeholder: ''
     });
+
+    // AOS.init();
       
     // $( ".popup" ).click(function(e) {
 
