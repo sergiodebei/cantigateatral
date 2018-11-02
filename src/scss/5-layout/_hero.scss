@@ -7,6 +7,7 @@
         bottom: 2rem;
         margin: 0 auto;
         max-width: 900px;
+        opacity: 0.2;
         @include transition (.3s);
         img{
             max-width: 50%;
