@@ -44,10 +44,15 @@
                     <div class="col-6 col-s-12">
 						{% for media in block.media %}
 							{% if media.acf_fc_layout == 'image' %}
-								{# <img class="lazy" data-original="{{ media.image.id|get_timber_image_src('column') }}"/>
-								<noscript><img {{ media.image.id|get_timber_image_responsive('column') }}/></noscript> #}
-								<img class="lazy" data-original="{{ TimberImage(media.image.sizes.column) }}" alt="{{ media.image.alt }}" />
-								<noscript><img src="{{ TimberImage(media.image.sizes.column) }}" alt="{{ media.image.alt }}" /></noscript>
+								{% if media.crop_off %}
+									<img class="lazy" data-original="{{ TimberImage(media.image.sizes.large) }}" alt="{{ media.image.alt }}" />
+									<noscript><img src="{{ TimberImage(media.image.sizes.large) }}" alt="{{ media.image.alt }}" /></noscript>
+									{% else %}
+										{# <img class="lazy" data-original="{{ media.image.id|get_timber_image_src('column') }}"/>
+										<noscript><img {{ media.image.id|get_timber_image_responsive('column') }}/></noscript> #}
+										<img class="lazy" data-original="{{ TimberImage(media.image.sizes.column) }}" alt="{{ media.image.alt }}" />
+										<noscript><img src="{{ TimberImage(media.image.sizes.column) }}" alt="{{ media.image.alt }}" /></noscript>
+								{% endif %}
 							{% elseif media.acf_fc_layout == 'video' %}
 								{% include 'partials/lazy-video.twig' with { image : media.video_preview.sizes.column, video: media.video, cropx: 436, cropy: 245 } %}
 							{% endif %}
