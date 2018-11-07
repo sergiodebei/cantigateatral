@@ -16,18 +16,6 @@
         )
     );
 
-    // function my_acf_google_map_api( $api ){
-    //     $api['key'] = AIzaSyDhTuXbe0SWdE1lknDnE7Fg0qGaXV3ZgRw;
-    //     return $api;
-    // }
-    // add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
-
-    // function my_acf_init() {
-    //     acf_update_setting('google_api_key', 'AIzaSyDhTuXbe0SWdE1lknDnE7Fg0qGaXV3ZgRw');
-    // }
-    // add_action('acf/init', 'my_acf_init');
-
-
 // Setup theme with Timber
 
 // Check if Timber plugin is active and prompts an error if not
@@ -93,8 +81,8 @@ class StarterSite extends TimberSite {
 	function register_my_menus() {
 		register_nav_menus(
 			array(
-			'primary-menu' => __( 'Primary menu' ),
-			//   'extra-menu' => __( 'Extra Menu' )
+                'primary-menu' => __( 'Primary menu' ),
+			// 'secondary-menu' => __( 'PT menu' )
 			)
 		);
     } 
@@ -131,7 +119,8 @@ class StarterSite extends TimberSite {
     }
 
     function add_to_context( $context ) {
-        $context['menu'] = new TimberMenu();
+        // $context['menu'] = new TimberMenu();
+        $context['menu'] = new TimberMenu('primary-menu');
         $context['site'] = $this;
         // $context['site']->url = BASEURL . '';
         $context['site']->assets = './assets/';
