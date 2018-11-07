@@ -77,8 +77,10 @@ header, .header--subnavigation{
             }
             .language-toggle{
                 margin-left: 20px;
+                align-items: center;
                 li{
                     padding-right: 0;
+                    position: relative;
                     &:first-child{
                         padding-right: 0;
                     }
@@ -88,6 +90,10 @@ header, .header--subnavigation{
                     & + li{
                         &:before {
                             content: " | ";
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: -1px;
                         }
                     }
                     a{
