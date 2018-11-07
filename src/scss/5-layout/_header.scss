@@ -68,6 +68,11 @@ header, .header--subnavigation{
                             cursor: pointer;
                         }
                     }
+                    &.current-lang{
+                        a{
+                            font-weight: bold;
+                        }
+                    }
                 }
             }
             .language-toggle{
@@ -79,6 +84,11 @@ header, .header--subnavigation{
                     }
                     &:last-child{
                         padding-left: 0; 
+                    }
+                    & + li{
+                        &:before {
+                            content: " | ";
+                        }
                     }
                     a{
                         font-weight: 300;
