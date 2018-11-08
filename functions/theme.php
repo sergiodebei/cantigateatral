@@ -6,15 +6,17 @@
     add_image_size('lightbox-preview-hor', 300, 225, true);
     add_image_size('lightbox-preview-ver', 225, 300, true);
   
-    acf_add_options_page(
-        array(
-            'page_title' 	=> 'Options',
-            'menu_title'	=> 'Options',
-            'menu_slug' 	=> 'options',
-            'capability'	=> 'edit_posts',
-            'redirect'      => false
-        )
-    );
+    if( function_exists('acf_add_options_page') ) {  
+        acf_add_options_page(
+            array(
+                'page_title' 	=> 'Options',
+                'menu_title'	=> 'Options',
+                'menu_slug' 	=> 'options',
+                'capability'	=> 'edit_posts',
+                'redirect'      => false
+            )
+        );
+    }
 
 // Setup theme with Timber
 
