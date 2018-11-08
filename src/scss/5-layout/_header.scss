@@ -53,9 +53,9 @@ header, .header--subnavigation{
                         @include transition (.3s);
                     }
                     &.menu-item__parent{
-                        span{
-                            padding-right: 0;
-                        }
+                        // span{
+                        //     padding-right: 0;
+                        // }
                         &--active{
                             span{
                                 color: $grey-light;
