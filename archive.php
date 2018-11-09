@@ -19,6 +19,8 @@ $context['post'] = $post;
 // $context['blocks'] = get_field('blocks', 356);
 //TODO the id show be dynamic
 $context['post']->blocks = get_field('blocks', 356);
+//live is 680
+// $context['post']->blocks = get_field('blocks', 680);
 
 // $context['body_class']  = 'archive-'.$post->post_name;
 
