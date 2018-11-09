@@ -14,5 +14,3 @@ $context['options'] = get_fields('options');
 $context['currentlanguage'] = pll_current_language();
 
 Timber::render('single-events.twig', $context);
-
-echo pll_current_language(  );
