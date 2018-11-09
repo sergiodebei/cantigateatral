@@ -18,9 +18,9 @@ $context['post'] = $post;
 // 356
 // $context['blocks'] = get_field('blocks', 356);
 //TODO the id show be dynamic
-$context['post']->blocks = get_field('blocks', 356);
-//live is 680
-// $context['post']->blocks = get_field('blocks', 680);
+$context['post']->blocks = pll_current_language() == 'nl' ? get_field('blocks', 356) : get_field('blocks', 401);
+//live is 713/715
+// $context['post']->blocks = pll_current_language() == 'nl' ? get_field('blocks', 713) : get_field('blocks', 715);
 
 // $context['body_class']  = 'archive-'.$post->post_name;
 
