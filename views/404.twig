@@ -1,8 +1,15 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    404
-    Sorry, we couldn't find what you're looking for.
+
+    <section class="not-found__container">
+		<div class="container">
+            <h3 class="title">{% if currentlanguage == 'nl' %}{{ options.nl.not_found }}{%else%}{{ options.pt.not_found }}{%endif%}</h3>
+            <a href="{% if currentlanguage == 'nl' %}{{ site.url }}{%else%}{{ site.url }}/pt/{%endif%}"  class="button">
+             {% if currentlanguage == 'nl' %}{{ options.nl.back_to_home }}{%else%}{{ options.pt.back_to_home }}{%endif%}
+            </a>
+        </div>
+    </section>
 
     {# {% include 'partials/searchform.twig' %}
     {% include 'partials/recent-posts.twig' %} #}
