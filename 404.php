@@ -7,6 +7,10 @@
 $templates = array( '404.twig');
 
 $context = Timber::get_context();
+$context['options']         = get_fields('options');
+$context['currentlanguage'] = pll_current_language();
+
+$context['body_class']  = 'error-404 not-found';
 
 // $args = array(
 //     'post_type' => 'post',
