@@ -1,11 +1,23 @@
-<div class="blog-comment {{comment.comment_type}}" id="blog-comment-{{comment.ID}}">
-	<h5 class="comment-author">{{comment.author.name}} says</h5>
-	<div class="comment-content">{{comment.comment_content|wpautop}}</div>
+<!-- comment form -->
+{# {% include "partials/comment-form.twig" %} #}
 
-	<section class="comment-box">
+{% set depth = comment.depth %}
+
+<div class="comment {% if depth %}comment__level--{{ depth }}{% endif %}" id="comment-{{comment.ID}}">
+	{# {{dump(comment)}} #}
+	<p class="comment__author">{{comment.author.name}}:</p>
+	<p class="comment__date">{{comment.date|date('j F Y')}}</p>
+	<p class="comment__content">{{comment.comment_content|wpautop}}</p>
+
+
+	<div class="comment__reply">
 		<!-- child comments -->
 		{% if post.comments %}
-			<h4> replies </h4>
+			<h5 class="comment__title">
+				{% if currentlanguage__nl %}{{ options.nl_comments.replies }}{%else%}{{ options.pt_comments.replies }}{%endif%}
+				{# Replies  #}
+				{% if depth %}comment__level--{{ depth }}{% endif %}
+			</h5>
 			<div class="comments">
 				{% for cmt in comment.children %}
 					{% include "partials/comment.twig" with {comment:cmt} %}
@@ -15,5 +27,5 @@
 
 		<!-- comment form -->
 		{% include "partials/comment-form.twig" %}
-	</section>
+	</div>
 </div>
