@@ -1,0 +1,95 @@
+.comments{
+    .comment{
+        &__title{
+            margin: 2rem 0 2rem;
+        }
+        &__author{
+            margin-bottom: 0;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        &__date{
+            font-size: 12px;
+        }
+        &__content{
+
+        }
+        &__revised{
+            font-size: 12px;
+        }
+
+        & + .comment{
+            margin-top: 2rem;
+        }
+        // &__reply{
+        //     padding-left: 3%;
+        // }
+        &__form{
+            input, textarea{
+                -webkit-appearance: none;
+                color: rgba(0, 0, 0, 0.75);
+                font-size: 13px;
+                box-sizing: border-box;
+                margin-top: 5px;
+                background-color: #f7f7f7;
+                border: none;
+                // padding: 11px;
+                padding: 8px;
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                resize: none;
+            }
+            input {
+                width: 50%;
+            }
+            textarea {
+                width:100%;
+            }
+            button{
+                & + button{
+                    margin-left: 5px;
+                }
+            }
+        }
+        &__form__block{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            label{
+                font-size: 13px;
+                line-height: 13px;
+            }
+            &--input{
+                float: left;
+                margin-right: 3%;
+                margin-bottom: 10px;
+                input{
+                    width: 100%;
+                }
+                & + .comment__form__block--input {
+                    margin-right:0%;
+                }
+            }
+            &--textarea{
+                margin-top: 10px;
+                margin-bottom: 2rem;
+                textarea{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .comments{
+        .comment{
+            &__form__block{
+                &--input{
+                    float: initial;
+                    margin-right: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
