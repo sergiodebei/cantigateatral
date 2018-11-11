@@ -168,7 +168,13 @@ header, .header--subnavigation{
                 }
                 .language-toggle{
                     margin-left: 0;
-                    padding: 0 20px 10px 0;
+                    padding: 0 10px;
+                    width: 100%;
+                    li{
+                        a{
+                            font-size: 20px;
+                        }
+                    }
                 }
                 // &.open{
                 //     transform: translate(0%, 0);
