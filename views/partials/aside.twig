@@ -1,20 +1,22 @@
+{% set currentlanguage__nl = currentlanguage == 'nl' %}
+
 <h5 class="aside__title">
-    {% if currentlanguage == 'nl' %}{{ options.nl.price }}{%else%}{{ options.pt.price }}{%endif%}     
+    {% if currentlanguage__nl %}{{ options.nl.price }}{%else%}{{ options.pt.price }}{%endif%}     
 </h5>
 <span class="aside__value">&euro; {{ post.price }}</span>
 
 <h5 class="aside__title">
-    {% if currentlanguage == 'nl' %}{{ options.nl.date }}{%else%}{{ options.pt.date }}{%endif%}     
+    {% if currentlanguage__nl %}{{ options.nl.date }}{%else%}{{ options.pt.date }}{%endif%}     
 </h5>
 <span class="aside__value">{{ fn('nlDate', post.event_date|date('l j F Y') ) }}</span>
 
 <h5 class="aside__title">
-    {% if currentlanguage == 'nl' %}{{ options.nl.time }}{%else%}{{ options.pt.time }}{%endif%}     
+    {% if currentlanguage__nl %}{{ options.nl.time }}{%else%}{{ options.pt.time }}{%endif%}     
 </h5>
 <span class="aside__value">{{ post.custom.time }}</span>
 
 <h5 class="aside__title">
-    {% if currentlanguage == 'nl' %}{{ options.nl.location }}{%else%}{{ options.pt.location }}{%endif%} 
+    {% if currentlanguage__nl %}{{ options.nl.location }}{%else%}{{ options.pt.location }}{%endif%} 
 </h5>
 <span class="aside__value">
     <a href="https://www.google.com/maps/search/?api=1&query={{post.custom.map.lat}},{{post.custom.map.lng}}" target="_blank">{{ post.custom.map.address }}</a>
