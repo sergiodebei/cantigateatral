@@ -54,7 +54,7 @@
 										<noscript><img src="{{ TimberImage(media.image.sizes.column) }}" alt="{{ media.image.alt }}" /></noscript>
 								{% endif %}
 							{% elseif media.acf_fc_layout == 'video' %}
-								{% include 'partials/lazy-video.twig' with { image : media.video_preview.sizes.column, video: media.video, cropx: 436, cropy: 245 } %}
+								{% include 'partials/lazy-video.twig' with { image : media.video_preview.sizes.column, video: media.video, play_white: media.video_play_white, cropx: 436, cropy: 245 } %}
 							{% endif %}
 						{% endfor %}
                     </div>
@@ -104,7 +104,7 @@
 
         {% elseif block.acf_fc_layout == 'video' %}
 			<div class="cb cb--fullvideo">
-				{% include 'partials/lazy-video.twig' with { image : block.video_preview.sizes.large, video: block.video, cropx: 900, cropy: 500 } %}
+				{% include 'partials/lazy-video.twig' with { image : block.video_preview.sizes.large, video: block.video, video_description: block.video_description, play_white: block.video_play_white, cropx: 900, cropy: 500 } %}
             </div>
 
 		{% elseif block.acf_fc_layout == 'contact_form' %}
