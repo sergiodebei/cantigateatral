@@ -44,6 +44,11 @@
           -webkit-transform: scale(1.05);
         }
       }
+      &--white{
+        &:after{
+          color: #fff;
+        }
+      }
     }
   
     &.lazy-loaded {
@@ -59,6 +64,16 @@
       height: 100%;
       top: 0;
       left: 0;
+    }
+    &__alt{
+      margin-bottom: 25px;
+      display: inline-block;
+    }
+    &__description{
+      position: absolute;
+      bottom: -24px;
+      right: 0;
+      font-size: 14px;
     }
   }
   
