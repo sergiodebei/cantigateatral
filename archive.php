@@ -24,6 +24,9 @@ $context['post']->blocks = pll_current_language() == 'nl' ? get_field('blocks', 
 
 // $context['body_class']  = 'archive-'.$post->post_name;
 
+$context['options']     = get_fields('options');
+$context['currentlanguage'] = pll_current_language();
+
 $context['events']    = Timber::get_posts( 
     [ 
       'post_type'   => 'events', 
