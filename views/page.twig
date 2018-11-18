@@ -4,4 +4,6 @@
 
     {% if post.blocks %}{% include 'partials/contentblocks.twig' %}{% endif %}
 
+    {% if fn('is_page', 'reacties') or fn('is_page', 'depoimentos') %}{% include 'partials/comments.twig' %}{% endif %}
+
 {% endblock %}

@@ -9,7 +9,7 @@ if ( ! class_exists( 'Timber' ) ) {
   return;
 }
 
-// $template               = is_page('about') || is_page('contact') ? $post->post_name.'.twig' : 'single.twig';
+// $template = is_page('reacties') || is_page('depoimentos') ? 'reactions.twig' : 'single.twig';
 $template = 'page.twig';
 $post                   = Timber::get_post();
 $context                = Timber::get_context();
