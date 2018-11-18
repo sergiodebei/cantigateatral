@@ -1,0 +1,27 @@
+	{# {{ fn('comment_form') }} #}
+
+	{% set currentlanguage__nl = currentlanguage == 'nl' %}
+
+	<section class="comments">
+		<!-- comments -->
+		<div class="comments__group">
+			{% if post.comments %}
+			<h5 class="comment__title">
+				{# Comments  #}
+				<p>{% if currentlanguage__nl %}{{ options.nl_comments.comments }}{%else%}{{ options.pt_comments.comments }}{%endif%}</p>
+				{# {% if depth %}comment__level--{{ depth }}{% endif %} #}
+			</h5>
+			{% for cmt in post.comments %}
+				{% include "partials/comment.twig" with {comment:cmt} %}
+			{% endfor %}
+			{% endif %}
+		</div>
+
+		{% if post.comment_status == "closed" %}
+			<p>{% if currentlanguage__nl %}{{ options.nl_comments.comments_closed }}{%else%}{{ options.pt_comments.comments_closed }}{%endif%}</p>
+			{# <p> comments for this post are closed </p> #}
+		{% else %}
+			<!-- comment form -->
+			{% include "partials/comment-form.twig" %}
+		{% endif %}
+	</section>
