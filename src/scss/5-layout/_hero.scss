@@ -4,13 +4,13 @@
         position: absolute;
         left: 0;
         right: 0;
-        bottom: 2rem;
+        bottom: 4.5rem;
         margin: 0 auto;
         max-width: 900px;
         opacity: 0.2;
         @include transition (.3s);
         img{
-            max-width: 50%;
+            max-width: 55%;
         }
     }
 }
