@@ -14,9 +14,11 @@ $post                   = Timber::get_post();
 $context                = Timber::get_context();
 $context['post']        = $post;
 $context['post']->blocks = $post->get_field('blocks');
-$context['options'] = get_fields('options');
 
 $context['body_class']  = 'page-home';
+
+$context['options'] = get_fields('options');
+$context['currentlanguage'] = pll_current_language();
 
 $context['events']    = Timber::get_posts( 
   [ 
@@ -25,6 +27,7 @@ $context['events']    = Timber::get_posts(
     'meta_key' => 'event_date',
     'orderby' => 'meta_value_num',
     'order' => 'ASC',
+    // 'lang' => pll_current_language(),
     'meta_query' => array(
       array(
         'key' => 'event_date',
