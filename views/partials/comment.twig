@@ -5,27 +5,10 @@
 
 <div class="comment {% if depth %}comment__level--{{ depth }}{% endif %}" id="comment-{{comment.ID}}">
 	{# {{dump(comment)}} #}
-	<p class="comment__author">{{comment.author.name}}:</p>
 	<p class="comment__date">{{comment.date|date('j F Y')}}</p>
+	<p class="comment__author">{{comment.author.name}}:</p>
 	<p class="comment__content">{{comment.comment_content|wpautop}}</p>
 
+	{# {% include "partials/comment-reply.twig" %} #}
 
-	<div class="comment__reply">
-		<!-- child comments -->
-		{% if post.comments %}
-			<h5 class="comment__title">
-				{% if currentlanguage__nl %}{{ options.nl_comments.replies }}{%else%}{{ options.pt_comments.replies }}{%endif%}
-				{# Replies  #}
-				{% if depth %}comment__level--{{ depth }}{% endif %}
-			</h5>
-			<div class="comments">
-				{% for cmt in comment.children %}
-					{% include "partials/comment.twig" with {comment:cmt} %}
-				{% endfor %}
-			</div>
-		{% endif %}
-
-		<!-- comment form -->
-		{% include "partials/comment-form.twig" %}
-	</div>
 </div>
