@@ -17,6 +17,7 @@ $context['post']        = $post;
 $context['post']->blocks = $post->get_field('blocks');
 
 $context['body_class']  = 'page-'.$post->post_name;
+
 $context['options']     = get_fields('options');
 $context['currentlanguage'] = pll_current_language();
 
