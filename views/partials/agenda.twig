@@ -29,7 +29,7 @@
                         <a href="{{ event.link }}"><h3 class="event__information__details__title">{{ event.title }}</h3></a>
                     </div>        
                     <div class="event__information__link">
-                        <a href="{{ event.link }}" class="button">{{ readmore }}</a>
+                        <a href="{{ event.link }}" class="button">{% if currentlanguage == 'nl' %}{{ options.nl.read_more }}{%else%}{{ options.pt.read_more }}{%endif%}</a>
                     </div>    
                 </div>      
             </div>
