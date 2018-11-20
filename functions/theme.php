@@ -57,6 +57,7 @@ class StarterSite extends TimberSite {
 
     add_action( 'init', array($this, 'add_menu_support') );
     add_action( 'init', array($this, 'register_my_menus') );
+    add_action( 'init', array($this, 'edit_menu_editor') );
     add_action( 'init', array($this, 'add_thumbnails_support') );
     // add_action( 'init', array($this, 'remove_meta_boxes') );
     // add_action( 'init', array($this, 'enqueue_styles'));
@@ -78,7 +79,7 @@ class StarterSite extends TimberSite {
 	function add_menu_support(){
         add_theme_support( 'menus' );
     }
-    
+
 	// Register the names of the menus
 	function register_my_menus() {
 		register_nav_menus(
@@ -88,6 +89,14 @@ class StarterSite extends TimberSite {
 			)
 		);
     } 
+
+    // add editor the privilege to edit theme
+    function edit_menu_editor(){
+        // get the the role object
+        $role_object = get_role( 'editor' );
+        // add $cap capability to this role object
+        $role_object->add_cap( 'edit_theme_options' );
+    }
     
     // Add Featured image support
 	function add_thumbnails_support(){
