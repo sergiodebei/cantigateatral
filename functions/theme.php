@@ -156,26 +156,58 @@ class StarterSite extends TimberSite {
 
     // Register Custom Post Type
     function register_post_types() {
-        register_post_type( 'events', array(
-            'labels' => array(
-            'name' => __( 'Events' ),
-            'singular_name' => __( 'Event' ),
-            'menu_name' => 'Agenda'
-        ),
-        'menu_position' => 10,
-        'menu_icon' => 'dashicons-calendar-alt',
-        'hierarchical' => false,
-        'public' => true,
-        'show_ui' => true,
-        'publicly_queryable' => true,
-        'has_archive' => true,
-        'show_in_nav_menus' => true,
-        'exclude_from_search' => false,
-        'rewrite' => array('slug' => 'agenda'),
-        'taxonomies' => array('category'),
-        'supports' => array('revisions', 'title','menu_order', 'page-attributes','comments','excerpt', 'editor')
-        )
-    );
+
+        register_post_type(
+            'events', array(
+                'labels' => array(
+                    'name' => __( 'Events' ),
+                    'singular_name' => __( 'Event' ),
+                    'menu_name' => 'Agenda',
+                    'add_new' => __( 'Add New Event' ),
+                    'view_item' => __( 'View Event' ),
+                    'view_items' => __( 'View Agenda' ),
+                ),
+                'menu_position' => 10,
+                'menu_icon' => 'dashicons-calendar-alt',
+                'hierarchical' => false,
+                'public' => true,
+                'show_ui' => true,
+                'publicly_queryable' => true,
+                'has_archive' => true,
+                'show_in_nav_menus' => true,
+                'exclude_from_search' => false,
+                'rewrite' => array('slug' => 'agenda'),
+                'taxonomies' => array('category'),
+                'supports' => array('revisions', 'title','menu_order', 'page-attributes','comments','excerpt', 'editor')
+            )
+        );  
+        
+        register_post_type(
+            'reactions', array(
+                'labels' => array(
+                    'name' => __( 'Reactions' ),
+                    'singular_name' => __( 'Reaction' ),
+                    'menu_name' => 'Reactions',
+                    'add_new' => __( 'Add New Reaction' ),
+                    'view_item' => __( 'View Reaction' ),
+                    'view_items' => __( 'View Reactions' ),
+                ),
+                'menu_position' => 10,
+                'menu_icon' => 'dashicons-format-status',
+                'hierarchical' => false,
+                'public' => true,
+                'show_ui' => true,
+                'publicly_queryable' => true,
+                'has_archive' => true,
+                'show_in_nav_menus' => true,
+                'exclude_from_search' => false,
+                // 'rewrite' => array('slug' => 'reactions'),
+                'taxonomies' => array('category'),
+                'supports' => array('title', 'menu_order', 'page-attributes', 'thumbnail', 'editor', 'excerpt')
+            )
+        ); 
+    
+    }
 
   	// Register Custom Taxonomy
   	function register_taxonomies() {
@@ -317,9 +349,8 @@ class StarterSite extends TimberSite {
 	}
 
 
-  }
-
 }
+
 /* functions.php */
 if (class_exists('Timber')){
     Timber::$cache = false;
