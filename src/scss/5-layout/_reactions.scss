@@ -1,6 +1,4 @@
 .reactions {
-    width: 60%;
-    margin: 0 auto;
     .reaction {
         display: flex;
         font-size: 16px;
@@ -38,5 +36,11 @@
             // margin-top: 1.5rem;
             border-top: 1px solid rgba(184, 184, 184, 0.2);
         }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .reactions {
+
     }
 }
