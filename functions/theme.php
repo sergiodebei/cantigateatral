@@ -46,34 +46,53 @@ Timber::$dirname = array('views');
 
 class StarterSite extends TimberSite {
 
-  function __construct() {
-    if ( WP_DEBUG ) {
-      add_filter( 'timber/cache/mode', function () {
-        return 'none';
-      });
+    function __construct() {
+        if ( WP_DEBUG ) {
+            add_filter( 'timber/cache/mode', function () {
+                return 'none';
+            });
+        }
+
+        // define('BASEURL', WP_HOME);
+
+        add_action( 'init', array($this, 'add_menu_support') );
+        add_action( 'init', array($this, 'register_my_menus') );
+        add_action( 'init', array($this, 'edit_menu_editor') );
+        add_action( 'init', array($this, 'add_thumbnails_support') );
+        // add_action( 'init', array($this, 'remove_meta_boxes') );
+        // add_action( 'init', array($this, 'enqueue_styles'));
+        // add_action( 'init', array($this, 'enqueue_scripts'));
+        add_filter( 'timber_context', array( $this, 'add_to_context' ) );
+        add_action( 'admin_init', array($this, 'post_remove'));
+        add_action( 'init', array( $this, 'register_post_types' ) );
+        add_action('init', array($this, 'reactions_hide_title') );
+        add_action( 'title_save_pre', array( $this, 'auto_generate_post_title' ) );
+        // add_action( 'init', array( $this, 'register_taxonomies' ) );
+        // add_action( 'init', array($this, 'option_page') );
+        // add_action( 'after_setup_theme', array($this, 'register_image_sizes'));
+        // add_filter( 'tiny_mce_before_init', array( $this, 'wptiny' ) );
+        add_filter( 'show_admin_bar', array( $this, 'my_function_admin_bar' ) );
+        // add_filter( 'upload_mimes', array( $this, 'cc_mime_types' ) );
+        // add_filter( 'posts_search', 'advanced_custom_search', 500, 2 );
+    
+        parent::__construct();
+
     }
 
-    // define('BASEURL', WP_HOME);
+    function reactions_hide_title(){
+        remove_post_type_support('reactions', 'title');
+    }
 
-    add_action( 'init', array($this, 'add_menu_support') );
-    add_action( 'init', array($this, 'register_my_menus') );
-    add_action( 'init', array($this, 'edit_menu_editor') );
-    add_action( 'init', array($this, 'add_thumbnails_support') );
-    // add_action( 'init', array($this, 'remove_meta_boxes') );
-    // add_action( 'init', array($this, 'enqueue_styles'));
-    // add_action( 'init', array($this, 'enqueue_scripts'));
-    add_filter( 'timber_context', array( $this, 'add_to_context' ) );
-    add_action( 'admin_init', array($this, 'post_remove'));
-    add_action( 'init', array( $this, 'register_post_types' ) );
-    // add_action( 'init', array( $this, 'register_taxonomies' ) );
-    // add_action( 'init', array($this, 'option_page') );
-    // add_action( 'after_setup_theme', array($this, 'register_image_sizes'));
-    // add_filter( 'tiny_mce_before_init', array( $this, 'wptiny' ) );
-    add_filter( 'show_admin_bar', array( $this, 'my_function_admin_bar' ) );
-    // add_filter( 'upload_mimes', array( $this, 'cc_mime_types' ) );
-    // add_filter( 'posts_search', 'advanced_custom_search', 500, 2 );
-    parent::__construct();
-  }
+    function auto_generate_post_title($title) {
+        global $post;
+        if (isset($post->ID)) {
+           if (empty($_POST['post_title']) && 'reactions' == get_post_type($post->ID)){
+              // get the current post ID number
+              $id = get_the_ID();
+              // add ID number with order strong
+              $title = 'reactions-'.$id;} }
+        return $title; 
+     }
 
 	// Add menu support
 	function add_menu_support(){
@@ -189,6 +208,7 @@ class StarterSite extends TimberSite {
                     'singular_name' => __( 'Reaction' ),
                     'menu_name' => 'Reactions',
                     'add_new' => __( 'Add New Reaction' ),
+                    'add_new_item' => __( 'Add New Reaction' ),
                     'view_item' => __( 'View Reaction' ),
                     'view_items' => __( 'View Reactions' ),
                 ),
@@ -202,7 +222,7 @@ class StarterSite extends TimberSite {
                 'show_in_nav_menus' => true,
                 'exclude_from_search' => false,
                 // 'rewrite' => array('slug' => 'reactions'),
-                'taxonomies' => array('category'),
+                // 'taxonomies' => array('category'),
                 'supports' => array('title', 'menu_order', 'page-attributes', 'thumbnail', 'editor', 'excerpt')
             )
         ); 
@@ -346,9 +366,8 @@ class StarterSite extends TimberSite {
 			)";
 		// endforeach;
 		return $where;
-	}
-
-
+    }
+    
 }
 
 /* functions.php */
