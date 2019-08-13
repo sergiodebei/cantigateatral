@@ -223,7 +223,7 @@ class StarterSite extends TimberSite {
                 'exclude_from_search' => false,
                 // 'rewrite' => array('slug' => 'reactions'),
                 // 'taxonomies' => array('category'),
-                'supports' => array('title', 'menu_order', 'page-attributes', 'thumbnail', 'editor', 'excerpt')
+                'supports' => array('title', 'menu_order', 'editor')
             )
         ); 
     
