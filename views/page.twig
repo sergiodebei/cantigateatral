@@ -5,7 +5,15 @@
     {% if post.blocks %}{% include 'partials/contentblocks.twig' %}{% endif %}
 
     {% if fn('is_page', 'reacties') or fn('is_page', 'depoimentos') %}
-        {% include 'partials/comments.twig' %}
+
+        <div class="container reactions"> 
+            {% for reaction in reactions %}
+                {% include 'partials/reaction.twig' %}
+            {% endfor %}
+        </div>
+
+        {# {% include 'partials/comments.twig' %} #}
+
     {% endif %}
 
 {% endblock %}

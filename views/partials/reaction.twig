@@ -1,0 +1,14 @@
+<div id="reaction-{{post.id}}" class="reaction">
+    {# {{ dump(reaction) }} #}
+    <div class="reaction__user">
+        <i class="fa fa-user"></i>
+    </div>
+    <div class="reaction__details">
+        <p>
+            <span class="reaction__author">{{reaction.custom.author}}</span>
+            &thinsp; &ndash; &thinsp; 
+            <span class="reaction__date">{{reaction.date}}</span>    
+        </p>
+        <div class="reaction__content">{{reaction.content}}</div>
+    </div>
+</div><!-- #reaction-## -->

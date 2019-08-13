@@ -39,4 +39,13 @@ $context['events']    = Timber::get_posts(
 	]
 );
 
+$context['reactions']    = Timber::get_posts( 
+	[ 
+	  'post_type'   => 'reactions',
+	  'posts_per_page' => -1,
+	  'order' => 'DESC',
+	]
+);
+
+
 Timber::render($template, $context);

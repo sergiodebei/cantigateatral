@@ -1,0 +1,42 @@
+.reactions {
+    width: 60%;
+    margin: 0 auto;
+    .reaction {
+        display: flex;
+        font-size: 16px;
+        line-height: 23px;
+        padding: 20px 0;
+        &__user {
+            background-color: $black;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .fa {
+                color: $white;
+                font-size: 20px;
+            }
+            margin-right: 20px;
+        }
+        &__details {
+            width: calc( 100% - 50px );
+            p {
+                &:first-child {
+                    font-size: 15px;
+                }
+            }
+        }
+        &__author {
+            font-weight: bold;
+        }
+        &__content {
+            margin-top: 5px;
+        }
+        & + .reaction {
+            // margin-top: 1.5rem;
+            border-top: 1px solid rgba(184, 184, 184, 0.2);
+        }
+    }
+}
