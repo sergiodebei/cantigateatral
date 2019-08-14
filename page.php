@@ -47,5 +47,9 @@ $context['reactions']    = Timber::get_posts(
 	]
 );
 
+// $args = array();
+// $comments_query = new WP_Comment_Query;
+// $comments = $comments_query->query( $args );
+// var_dump($comments);
 
 Timber::render($template, $context);
