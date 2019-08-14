@@ -216,7 +216,7 @@ class StarterSite extends TimberSite {
                 'menu_icon' => 'dashicons-format-status',
                 'hierarchical' => false,
                 'public' => true,
-                'show_ui' => true,
+                'show_ui' => false,
                 'publicly_queryable' => true,
                 'has_archive' => true,
                 'show_in_nav_menus' => true,
